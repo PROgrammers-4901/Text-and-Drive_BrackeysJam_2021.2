@@ -13,11 +13,14 @@ public class SliderObjective : ObjectiveBase
         if (Math.Abs(value - desiredValue) < 5f)
         {
             GetComponentInChildren<Image>().color = Color.green;
-            Invoke(nameof(IsCorrectValue), 1f);
+
+            if (!IsInvoking(nameof(IsCorrectValue)))
+                Invoke(nameof(IsCorrectValue), 1f);
         }
         else if (IsInvoking(nameof(IsCorrectValue)))
         {
             CancelInvoke(nameof(IsCorrectValue));
+            CancelInvoke(nameof(CompleteObjective));
             IsInvalidValue();
         }
     }

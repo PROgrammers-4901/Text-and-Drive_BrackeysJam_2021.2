@@ -133,10 +133,9 @@ GameObject:
   m_Component:
   - component: {fileID: 593496113}
   - component: {fileID: 593496112}
-  - component: {fileID: 593496111}
   - component: {fileID: 593496110}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: PhoneCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -162,7 +161,7 @@ MonoBehaviour:
   m_RendererIndex: -1
   m_VolumeLayerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 32
   m_VolumeTrigger: {fileID: 0}
   m_RenderPostProcessing: 0
   m_Antialiasing: 0
@@ -174,14 +173,6 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!81 &593496111
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 593496109}
-  m_Enabled: 1
 --- !u!20 &593496112
 Camera:
   m_ObjectHideFlags: 0
@@ -191,7 +182,7 @@ Camera:
   m_GameObject: {fileID: 593496109}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 4
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -213,7 +204,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 32
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -233,7 +224,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 593496109}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -439.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -378,7 +369,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 651353342517960278, guid: 1352e5af5df17ef47b7461cf119ce270, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 468.1
+      value: -80
       objectReference: {fileID: 0}
     - target: {fileID: 651353342517960278, guid: 1352e5af5df17ef47b7461cf119ce270, type: 3}
       propertyPath: m_LocalRotation.w
@@ -402,7 +393,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 651353342517960278, guid: 1352e5af5df17ef47b7461cf119ce270, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -14.3
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 651353342517960278, guid: 1352e5af5df17ef47b7461cf119ce270, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
