@@ -10,4 +10,8 @@ public class GameModes : ScriptableObject
 
     [Header("Settings")]
     public bool allowRepetition = false;
+    [Range(0f,10f)]
+    public float minTimeBetweenMicrogames = 5f;
+    [Range(0f,10f)]
+    public float maxTimeBetweenMicrogames = 10f;
 }

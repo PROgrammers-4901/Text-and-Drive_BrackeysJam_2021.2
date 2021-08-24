@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Microgames
 {
@@ -18,6 +19,7 @@ namespace Microgames
 
         private bool _isComplete = false;
         private int _activeObjectiveIndex = 0;
+        public MicrogameCompleteEvent MicrogameCompleted;
     
         // Start is called before the first frame update
         void Start()
@@ -45,10 +47,16 @@ namespace Microgames
                     _objectives[_activeObjectiveIndex].gameObject.SetActive(true);
                 else
                 {
-                    Debug.Log("MICROGAME COMPLETE");
+                    MicrogameCompleted.Invoke(this);
                     _isComplete = true;
                 }
             }
         }
+    }
+
+    [System.Serializable]
+    public class MicrogameCompleteEvent : UnityEvent<Microgame>
+    {
+        
     }
 }

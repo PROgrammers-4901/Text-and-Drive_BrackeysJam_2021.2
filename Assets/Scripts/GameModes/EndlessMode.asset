@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18d1be5e70303834eb7f68616079ea23, type: 3}
   m_Name: EndlessMode
   m_EditorClassIdentifier: 
-  microgamesCollection: []
+  microgamesCollection:
+  - {fileID: 651353342517960279, guid: 1352e5af5df17ef47b7461cf119ce270, type: 3}
   allowRepetition: 1
-  maxTimeAllowedInSeconds: 5
+  minTimeBetweenMicrogames: 5
+  maxTimeBetweenMicrogames: 10

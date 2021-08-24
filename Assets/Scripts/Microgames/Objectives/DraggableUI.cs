@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class DraggableUI : ObjectiveBase, IDragHandler, IBeginDragHandler, IEndDragHandler
+public class DraggableUI : ObjectiveBase, IDragHandler, IBeginDragHandler, IEndDragHandler, IPointerDownHandler
 {
     [Header("References")]
     [SerializeField] private RectTransform draggable;
@@ -19,6 +19,7 @@ public class DraggableUI : ObjectiveBase, IDragHandler, IBeginDragHandler, IEndD
     private Color _imageColor;
     private Image _image;
     private Vector2 _startingPosition = Vector2.zero;
+    private bool _allowDrag = false;
 
     private void Awake()
     {
@@ -28,26 +29,44 @@ public class DraggableUI : ObjectiveBase, IDragHandler, IBeginDragHandler, IEndD
 
     public void OnDrag(PointerEventData eventData)
     {
-        draggable.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        if(_allowDrag)
+            draggable.anchoredPosition += eventData.delta / (canvas.renderMode != RenderMode.WorldSpace ? canvas.scaleFactor : 1);
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        _startingPosition = draggable.anchoredPosition;
+        if (!_allowDrag) return;
         
+        _startingPosition = draggable.anchoredPosition;
+
         _imageColor.a = .8f;
         _image.color = _imageColor;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        if (!_allowDrag) return;
+        
         _imageColor.a = 1f;
         _image.color = _imageColor;
         
-        if(Vector2.Distance(draggable.anchoredPosition, destination.anchoredPosition) < distanceThreshold)
-            CompleteObjective();
+        if(destination)
+            if (Vector2.Distance(draggable.anchoredPosition, destination.anchoredPosition) < distanceThreshold)
+                CompleteObjective();
         
         if (snapToOrigin)
             draggable.anchoredPosition = _startingPosition;
+        
+        _allowDrag = false;
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        GameObject clicked = eventData.pointerPressRaycast.gameObject;
+        
+        Debug.Log(clicked);
+        
+        if (clicked == draggable.gameObject)
+            _allowDrag = true;
     }
 }
