@@ -15,6 +15,9 @@ public class DragNDrop : Objective
     [Header("Settings")] 
     [SerializeField]
     private bool _snapToOrigin = false;
+
+    [SerializeField] 
+    private bool useThreshold = false;
     [SerializeField]
     private float _distanceToDestinationThreshold = 1f;
     
@@ -30,6 +33,9 @@ public class DragNDrop : Objective
         _zDistFromCamera = Mathf.Abs(draggableObject.transform.position.z - mainCamera.transform.position.z);
         _distanceToDestinationThreshold *=
             Vector3.Magnitude(draggableObject.transform.position - destination.transform.position);
+
+        if (mainCamera == null)
+            mainCamera = Camera.main;
     }
 
     void Update()
@@ -48,8 +54,20 @@ public class DragNDrop : Objective
         if (Input.GetButtonUp("Click") && _snapToOrigin)
             draggableObject.transform.position = _draggableStartPosition;
 
+        if (useThreshold)
+        {
+            Debug.Log("USE COLLIDER NOT IMPLEMENTED YET");
+        }
+
         if (Vector3.Magnitude(draggableObject.transform.position - destination.transform.position) <
             _distanceToDestinationThreshold)
+                CompleteObjective();
+        
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject == destination && !useThreshold)
             CompleteObjective();
     }
 }

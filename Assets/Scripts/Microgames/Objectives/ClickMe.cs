@@ -7,6 +7,15 @@ public class ClickMe : Objective
     [SerializeField] 
     private GameObject _clickableObject;
 
+    [SerializeField] private Camera _mainCamera;
+
+
+    private void Start()
+    {
+        if(_mainCamera == null)
+            _mainCamera = Camera.main;
+    }
+
     void Update()
     {
         if (Input.GetButtonDown("Click"))
