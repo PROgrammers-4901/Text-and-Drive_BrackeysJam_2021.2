@@ -8,7 +8,7 @@ using UnityEngine.Rendering;
 public class DragNDrop : Objective
 {
     [Header("References")]
-    public GameObject draggableObject;
+    public DraggableUI draggableObject;
     public GameObject destination;
     public Camera mainCamera;
 
@@ -40,19 +40,20 @@ public class DragNDrop : Objective
 
     void Update()
     {
+        Debug.Log(Vector3.Distance(draggableObject.transform.position, destination.transform.position));
         _mousePosition = Input.mousePosition;
         _mousePosition.z = _zDistFromCamera;
         _mousePosition = mainCamera.ScreenToWorldPoint(_mousePosition);
 
-        if (Input.GetButtonDown("Click"))
-            _draggableStartPosition = draggableObject.transform.position;
-        
-        if (Input.GetButton("Click"))
-            draggableObject.transform.position = new Vector3(_mousePosition.x,
-                _mousePosition.y, draggableObject.transform.position.z);
-
-        if (Input.GetButtonUp("Click") && _snapToOrigin)
-            draggableObject.transform.position = _draggableStartPosition;
+        // if (Input.GetButtonDown("Click"))
+        //     _draggableStartPosition = draggableObject.transform.position;
+        //
+        // if (Input.GetButton("Click"))
+        //     draggableObject.transform.position = new Vector3(_mousePosition.x,
+        //         _mousePosition.y, draggableObject.transform.position.z);
+        //
+        // if (Input.GetButtonUp("Click") && _snapToOrigin)
+        //     draggableObject.transform.position = _draggableStartPosition;
 
         if (useThreshold)
         {
@@ -61,7 +62,7 @@ public class DragNDrop : Objective
 
         if (Vector3.Magnitude(draggableObject.transform.position - destination.transform.position) <
             _distanceToDestinationThreshold)
-                CompleteObjective();
+            CompleteObjective();
         
     }
 
