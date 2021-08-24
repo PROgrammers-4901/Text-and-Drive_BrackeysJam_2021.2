@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Microgames;
 using UnityEngine;
 
-public class Objective : MonoBehaviour
+public class ObjectiveBase : MonoBehaviour
 {
     protected bool IsComplete { get; set; }
 

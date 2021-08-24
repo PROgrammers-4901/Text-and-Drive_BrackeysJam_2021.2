@@ -10,7 +10,7 @@ namespace Microgames
         
         [Header("Objectives")]
         [SerializeField] 
-        private Objective[] _objectives;
+        private ObjectiveBase[] _objectives;
         
         [Header("Settings")] 
         [SerializeField]
@@ -21,10 +21,10 @@ namespace Microgames
         // Start is called before the first frame update
         void Start()
         {
-            _objectives[0].GetComponent<Objective>().SetParentMicrogame(this);
+            _objectives[0].GetComponent<ObjectiveBase>().SetParentMicrogame(this);
             for (int i = 1; i < _objectives.Length; i++)
             {
-                _objectives[i].GetComponent<Objective>().SetParentMicrogame(this);
+                _objectives[i].GetComponent<ObjectiveBase>().SetParentMicrogame(this);
                 _objectives[i].gameObject.SetActive(false);
             }
         }

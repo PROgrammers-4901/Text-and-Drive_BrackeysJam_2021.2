@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public class ClickMe : Objective
+public class ClickMe : ObjectiveBase
 {
     [SerializeField] 
     private GameObject _clickableObject;

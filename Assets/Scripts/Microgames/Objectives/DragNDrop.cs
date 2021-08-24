@@ -5,7 +5,7 @@ using System.Security.Permissions;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class DragNDrop : Objective
+public class DragNDrop : ObjectiveBase
 {
     [Header("References")]
     public DraggableUI draggableObject;
