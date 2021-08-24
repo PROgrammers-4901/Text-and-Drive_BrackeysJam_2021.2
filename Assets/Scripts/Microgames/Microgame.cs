@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Microgames
 {
@@ -16,7 +17,9 @@ namespace Microgames
         [SerializeField]
         private bool _randomizeObjectives;
 
+        private bool _isComplete = false;
         private int _activeObjectiveIndex = 0;
+        public MicrogameCompleteEvent MicrogameCompleted;
     
         // Start is called before the first frame update
         void Start()
@@ -32,6 +35,7 @@ namespace Microgames
         public void StartNextObjective()
         {
             _objectives[_activeObjectiveIndex].gameObject.SetActive(false);
+            
             if(_randomizeObjectives)
             {
                 throw new NotImplementedException();
@@ -39,13 +43,20 @@ namespace Microgames
             else
             {
                 _activeObjectiveIndex++;
-                if (_activeObjectiveIndex < _objectives.Length)
+                if (_activeObjectiveIndex != _objectives.Length)
                     _objectives[_activeObjectiveIndex].gameObject.SetActive(true);
                 else
                 {
-                    Debug.Log("MICROGAME COMPLETE");
+                    MicrogameCompleted.Invoke(this);
+                    _isComplete = true;
                 }
             }
         }
+    }
+
+    [System.Serializable]
+    public class MicrogameCompleteEvent : UnityEvent<Microgame>
+    {
+        
     }
 }
