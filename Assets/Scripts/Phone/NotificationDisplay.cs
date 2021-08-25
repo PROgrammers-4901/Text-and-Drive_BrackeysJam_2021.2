@@ -1,8 +1,9 @@
+using Microgames;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-namespace Microgames
+namespace Phone
 {
     public class NotificationDisplay : MonoBehaviour
     {

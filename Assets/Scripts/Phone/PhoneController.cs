@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
+using Microgames;
 using UnityEngine;
 
-namespace Microgames
+namespace Phone
 {
     public class PhoneController : Singleton<PhoneController>
     {
@@ -25,9 +26,7 @@ namespace Microgames
 
         private void Start()
         {
-            FetchMicrogame();
-
-            //SpawnMicrogame(loadedMicroGames.First().microgame.gameObject);
+            Invoke(nameof(FetchMicrogame), GameManager.Instance.GetMicrogameInterval());
         }
 
         void SpawnNotification(MicrogameScriptableObject microgame)
