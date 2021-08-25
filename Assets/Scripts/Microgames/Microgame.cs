@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Microgames.Objectives;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -17,7 +18,6 @@ namespace Microgames
         [SerializeField]
         private bool _randomizeObjectives;
 
-        private bool _isComplete = false;
         private int _activeObjectiveIndex = 0;
         public MicrogameCompleteEvent MicrogameCompleted;
     
@@ -48,7 +48,6 @@ namespace Microgames
                 else
                 {
                     MicrogameCompleted.Invoke(this);
-                    _isComplete = true;
                 }
             }
         }

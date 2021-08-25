@@ -1,72 +1,72 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class DraggableUI : ObjectiveBase, IDragHandler, IBeginDragHandler, IEndDragHandler, IPointerDownHandler
+namespace Microgames.Objectives
 {
-    [Header("References")]
-    [SerializeField] private RectTransform draggable;
-    [SerializeField] private RectTransform destination;
-    [SerializeField] private Canvas canvas;
+    public class DraggableUI : ObjectiveBase, IDragHandler, IBeginDragHandler, IEndDragHandler, IPointerDownHandler
+    {
+        [Header("References")]
+        [SerializeField] private RectTransform draggable;
+        [SerializeField] private RectTransform destination;
+        [SerializeField] private Canvas canvas;
     
-    [Header("Settings")]
-    [SerializeField] private bool snapToOrigin;
-    [SerializeField] private float distanceThreshold = 10f;
+        [Header("Settings")]
+        [SerializeField] private bool snapToOrigin;
+        [SerializeField] private float distanceThreshold = 10f;
     
-    private Color _imageColor;
-    private Image _image;
-    private Vector2 _startingPosition = Vector2.zero;
-    private bool _allowDrag = false;
+        private Color _imageColor;
+        private Image _image;
+        private Vector2 _startingPosition = Vector2.zero;
+        private bool _allowDrag = false;
 
-    private void Awake()
-    {
-        _image = draggable.GetComponentInChildren<Image>();
-        _imageColor = _image.color;
-    }
+        private void Awake()
+        {
+            _image = draggable.GetComponentInChildren<Image>();
+            _imageColor = _image.color;
+        }
 
-    public void OnDrag(PointerEventData eventData)
-    {
-        if(_allowDrag)
-            draggable.anchoredPosition += eventData.delta / (canvas.renderMode != RenderMode.WorldSpace ? canvas.scaleFactor : 1);
-    }
+        public void OnDrag(PointerEventData eventData)
+        {
+            if(_allowDrag)
+                draggable.anchoredPosition += eventData.delta / (canvas.renderMode != RenderMode.WorldSpace ? canvas.scaleFactor : 1);
+        }
 
-    public void OnBeginDrag(PointerEventData eventData)
-    {
-        if (!_allowDrag) return;
+        public void OnBeginDrag(PointerEventData eventData)
+        {
+            if (!_allowDrag) return;
         
-        _startingPosition = draggable.anchoredPosition;
+            _startingPosition = draggable.anchoredPosition;
 
-        _imageColor.a = .8f;
-        _image.color = _imageColor;
-    }
+            _imageColor.a = .8f;
+            _image.color = _imageColor;
+        }
 
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        if (!_allowDrag) return;
+        public void OnEndDrag(PointerEventData eventData)
+        {
+            if (!_allowDrag) return;
         
-        _imageColor.a = 1f;
-        _image.color = _imageColor;
+            _imageColor.a = 1f;
+            _image.color = _imageColor;
         
-        if(destination)
-            if (Vector2.Distance(draggable.anchoredPosition, destination.anchoredPosition) < distanceThreshold)
-                CompleteObjective();
+            if(destination)
+                if (Vector2.Distance(draggable.anchoredPosition, destination.anchoredPosition) < distanceThreshold)
+                    CompleteObjective();
         
-        if (snapToOrigin)
-            draggable.anchoredPosition = _startingPosition;
+            if (snapToOrigin)
+                draggable.anchoredPosition = _startingPosition;
         
-        _allowDrag = false;
-    }
+            _allowDrag = false;
+        }
 
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        GameObject clicked = eventData.pointerPressRaycast.gameObject;
+        public void OnPointerDown(PointerEventData eventData)
+        {
+            GameObject clicked = eventData.pointerPressRaycast.gameObject;
         
-        Debug.Log(clicked);
+            Debug.Log(clicked);
         
-        if (clicked == draggable.gameObject)
-            _allowDrag = true;
+            if (clicked == draggable.gameObject)
+                _allowDrag = true;
+        }
     }
 }

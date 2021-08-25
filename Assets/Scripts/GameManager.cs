@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Microgames;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -25,10 +26,10 @@ public class GameManager : Singleton<GameManager>
     public void AddGameObjectToCommon(GameObject gameObject) =>
         commonGameObjects.Append(gameObject);
 
-    public GameObject GetRandomMicrogame() =>
+    public MicrogameScriptableObject GetRandomMicrogame() =>
         currentGameMode.microgamesCollection.ElementAt(
         Random.Range(0, currentGameMode.microgamesCollection.Length)
-        ).gameObject;
+        );
 
     public float GetMicrogameInterval() =>
         Random.Range(currentGameMode.minTimeBetweenMicrogames, currentGameMode.maxTimeBetweenMicrogames);

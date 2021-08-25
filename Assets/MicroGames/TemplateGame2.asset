@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18d1be5e70303834eb7f68616079ea23, type: 3}
-  m_Name: EndlessMode
+  m_Script: {fileID: 11500000, guid: 339806e1f006ae2469ce0815e16c30d8, type: 3}
+  m_Name: TemplateGame2
   m_EditorClassIdentifier: 
-  microgamesCollection:
-  - {fileID: 11400000, guid: 41dd540223c5b2e439c49c8dfcb61f77, type: 2}
-  allowRepetition: 1
-  minTimeBetweenMicrogames: 5
-  maxTimeBetweenMicrogames: 10
+  appName: 
+  notificationText: 
+  appLogo: {fileID: 0}
+  microgame: {fileID: 0}

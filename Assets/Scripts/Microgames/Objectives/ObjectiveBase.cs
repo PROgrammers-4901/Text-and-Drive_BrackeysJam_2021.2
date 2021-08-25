@@ -1,21 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
-using Microgames;
 using UnityEngine;
 
-public class ObjectiveBase : MonoBehaviour
+namespace Microgames.Objectives
 {
-    protected bool IsComplete { get; set; }
-
-    protected float ElapsedTime { get; set; }
-
-    private Microgame _parentMicrogame;
-
-    protected void CompleteObjective()
+    public class ObjectiveBase : MonoBehaviour
     {
-        IsComplete = true;
-        _parentMicrogame.StartNextObjective();
+        protected bool IsComplete { get; set; }
+
+        protected float ElapsedTime { get; set; }
+
+        private Microgame _parentMicrogame;
+
+        protected void CompleteObjective()
+        {
+            IsComplete = true;
+            _parentMicrogame.StartNextObjective();
+        }
+        public void SetParentMicrogame(Microgame parent) =>
+            _parentMicrogame = parent;
     }
-    public void SetParentMicrogame(Microgame parent) =>
-        _parentMicrogame = parent;
 }

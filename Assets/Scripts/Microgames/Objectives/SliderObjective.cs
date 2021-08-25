@@ -1,44 +1,45 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SliderObjective : ObjectiveBase
+namespace Microgames.Objectives
 {
-    [SerializeField] private float desiredValue = 100f;
+    public class SliderObjective : ObjectiveBase
+    {
+        [SerializeField] private float desiredValue = 100f;
     
-    public void CheckIfValueIs(Single value)
-    {
-        if (Math.Abs(value - desiredValue) < 5f)
+        public void CheckIfValueIs(Single value)
         {
-            GetComponentInChildren<Image>().color = Color.green;
+            if (Math.Abs(value - desiredValue) < 5f)
+            {
+                GetComponentInChildren<Image>().color = Color.green;
 
-            if (!IsInvoking(nameof(IsCorrectValue)))
-                Invoke(nameof(IsCorrectValue), 1f);
+                if (!IsInvoking(nameof(IsCorrectValue)))
+                    Invoke(nameof(IsCorrectValue), 1f);
+            }
+            else if (IsInvoking(nameof(IsCorrectValue)))
+            {
+                CancelInvoke(nameof(IsCorrectValue));
+                CancelInvoke(nameof(CompleteObjective));
+                IsInvalidValue();
+            }
         }
-        else if (IsInvoking(nameof(IsCorrectValue)))
+
+        private void IsCorrectValue()
         {
-            CancelInvoke(nameof(IsCorrectValue));
-            CancelInvoke(nameof(CompleteObjective));
-            IsInvalidValue();
+            GetComponentInChildren<Image>().color = Color.blue;
+            Invoke(nameof(CompleteObjective), .5f);
         }
-    }
 
-    private void IsCorrectValue()
-    {
-        GetComponentInChildren<Image>().color = Color.blue;
-        Invoke(nameof(CompleteObjective), .5f);
-    }
+        private void IsInvalidValue()
+        {
+            GetComponentInChildren<Image>().color = Color.red;
+            Invoke(nameof(ReturnColor), .5f);
+        }
 
-    private void IsInvalidValue()
-    {
-        GetComponentInChildren<Image>().color = Color.red;
-        Invoke(nameof(ReturnColor), .5f);
-    }
-
-    private void ReturnColor()
-    {
-        GetComponentInChildren<Image>().color = Color.white;
+        private void ReturnColor()
+        {
+            GetComponentInChildren<Image>().color = Color.white;
+        }
     }
 }
