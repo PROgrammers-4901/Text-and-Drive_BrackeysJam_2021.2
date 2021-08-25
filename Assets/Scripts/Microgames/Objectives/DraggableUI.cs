@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -28,8 +29,12 @@ namespace Microgames.Objectives
 
         public void OnDrag(PointerEventData eventData)
         {
-            if(_allowDrag)
+            if (_allowDrag)
+            {
                 draggable.anchoredPosition += eventData.delta / (canvas.renderMode != RenderMode.WorldSpace ? canvas.scaleFactor : 1);
+                Debug.Log(draggable.anchoredPosition);
+            }
+                
         }
 
         public void OnBeginDrag(PointerEventData eventData)

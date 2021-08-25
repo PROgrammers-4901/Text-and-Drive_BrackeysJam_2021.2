@@ -15,7 +15,7 @@ namespace Phone
         public SpawnMicrogameEvent SpawnMicrogame;
         public void InitializeNotification(MicrogameScriptableObject microgameSO)
         {
-            appLogo = microgameSO.appLogo;
+            appLogo.sprite = microgameSO.appLogo;
             appName.text = microgameSO.appName;
             notificationText.text = microgameSO.notificationText;
             microgame = microgameSO.microgame.gameObject;

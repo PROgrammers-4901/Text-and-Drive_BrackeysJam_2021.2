@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Microgames
 {
@@ -8,7 +7,7 @@ namespace Microgames
     {
         public string appName;
         public string notificationText;
-        public Image appLogo;
+        public Sprite appLogo;
         public Microgame microgame;
     }
 }
