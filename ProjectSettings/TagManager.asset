@@ -11,7 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - CarUI
   - 
   - 
   - 
@@ -40,4 +40,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Outside
+    uniqueID: 2197112475
+    locked: 0
+  - name: CarExterior
+    uniqueID: 2528476181
+    locked: 0
+  - name: CarInterior
+    uniqueID: 2912850091
+    locked: 0
+  - name: UI
+    uniqueID: 797723031
     locked: 0

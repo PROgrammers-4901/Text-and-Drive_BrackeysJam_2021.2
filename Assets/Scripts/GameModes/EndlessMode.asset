@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18d1be5e70303834eb7f68616079ea23, type: 3}
+  m_Name: EndlessMode
+  m_EditorClassIdentifier: 
+  microgamesCollection:
+  - {fileID: 11400000, guid: 41dd540223c5b2e439c49c8dfcb61f77, type: 2}
+  - {fileID: 11400000, guid: 56b9d8ae2eb51b5448880270b13cc7e1, type: 2}
+  allowRepetition: 1
+  minTimeBetweenMicrogames: 5
+  maxTimeBetweenMicrogames: 10
