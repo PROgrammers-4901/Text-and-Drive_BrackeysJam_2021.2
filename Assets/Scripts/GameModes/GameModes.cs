@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using Microgames;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/GameSettings", order = 1)]
+[CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/GameMode", order = 1)]
 public class GameModes : ScriptableObject
 {
-    public Microgame[] microgamesCollection;
+    public MicrogameScriptableObject[] microgamesCollection;
 
     [Header("Settings")]
     public bool allowRepetition = false;

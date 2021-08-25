@@ -750,7 +750,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 225, y: 350}
+  m_SizeDelta: {x: 225, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &651353342517960277
 Canvas:
@@ -830,6 +830,9 @@ MonoBehaviour:
   - {fileID: 651353342445925970}
   - {fileID: 651353341123210468}
   _randomizeObjectives: 0
+  MicrogameCompleted:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5395761574071728858
 GameObject:
   m_ObjectHideFlags: 0
