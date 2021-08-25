@@ -41,11 +41,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 694841899895381828, guid: df2ac0f53b6d9ae4ca1723622e9c16e2, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 225
+      value: 245
       objectReference: {fileID: 0}
     - target: {fileID: 694841899895381828, guid: df2ac0f53b6d9ae4ca1723622e9c16e2, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 400
+      value: 420
       objectReference: {fileID: 0}
     - target: {fileID: 694841899895381828, guid: df2ac0f53b6d9ae4ca1723622e9c16e2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -57,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 694841899895381828, guid: df2ac0f53b6d9ae4ca1723622e9c16e2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1828.2386
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 694841899895381828, guid: df2ac0f53b6d9ae4ca1723622e9c16e2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -77,11 +77,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 694841899895381828, guid: df2ac0f53b6d9ae4ca1723622e9c16e2, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1025.1428
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 694841899895381828, guid: df2ac0f53b6d9ae4ca1723622e9c16e2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -90.20769
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 694841899895381828, guid: df2ac0f53b6d9ae4ca1723622e9c16e2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -97,7 +97,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 694841899895381832, guid: df2ac0f53b6d9ae4ca1723622e9c16e2, type: 3}
       propertyPath: m_Name
-      value: Stocks
+      value: Order Food
       objectReference: {fileID: 0}
     - target: {fileID: 3456552121906541672, guid: df2ac0f53b6d9ae4ca1723622e9c16e2, type: 3}
       propertyPath: m_Text
