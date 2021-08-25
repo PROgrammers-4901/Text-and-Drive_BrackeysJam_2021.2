@@ -425,41 +425,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1846566908}
     m_Modifications:
-    - target: {fileID: 1116750800275855555, guid: 7615c825a730304439e2f23d24b8ec61, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1116750800275855555, guid: 7615c825a730304439e2f23d24b8ec61, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1116750800275855555, guid: 7615c825a730304439e2f23d24b8ec61, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1116750800275855555, guid: 7615c825a730304439e2f23d24b8ec61, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1116750800275855555, guid: 7615c825a730304439e2f23d24b8ec61, type: 3}
+    - target: {fileID: 5055349847546635015, guid: 7615c825a730304439e2f23d24b8ec61, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1116750800275855555, guid: 7615c825a730304439e2f23d24b8ec61, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1116750800275855555, guid: 7615c825a730304439e2f23d24b8ec61, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.000015258789
+      value: 245
       objectReference: {fileID: 0}
     - target: {fileID: 5055349847546635015, guid: 7615c825a730304439e2f23d24b8ec61, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -96.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5055349847546635015, guid: 7615c825a730304439e2f23d24b8ec61, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 41.5
+      value: -98.4
       objectReference: {fileID: 0}
     - target: {fileID: 8131221978787879244, guid: 7615c825a730304439e2f23d24b8ec61, type: 3}
       propertyPath: m_Pivot.x
@@ -548,14 +520,6 @@ PrefabInstance:
     - target: {fileID: 8131221978787879245, guid: 7615c825a730304439e2f23d24b8ec61, type: 3}
       propertyPath: m_Name
       value: PhoneFrame
-      objectReference: {fileID: 0}
-    - target: {fileID: 8131221978787879246, guid: 7615c825a730304439e2f23d24b8ec61, type: 3}
-      propertyPath: m_UseSpriteMesh
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8131221978787879246, guid: 7615c825a730304439e2f23d24b8ec61, type: 3}
-      propertyPath: m_PreserveAspect
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7615c825a730304439e2f23d24b8ec61, type: 3}
