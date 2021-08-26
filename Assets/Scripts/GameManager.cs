@@ -12,19 +12,20 @@ public class GameManager : Singleton<GameManager>
     private GameObject[] commonGameObjects;
     [SerializeField]
     private GameModes currentGameMode;
-    public GameObject GetPlayerObject { get; private set; }
     
     [Header("Scoring")] 
     [SerializeField]
     private float _gameTime;
 
-    
+    public GameObject PlayerObject { get; private set; }
+    public float PlayerSpeed { get; private set; }
 
     private void Awake()
     {
-        GetPlayerObject = GameObject.FindGameObjectWithTag("Player");
+        PlayerObject = GameObject.FindGameObjectWithTag("Player");
+        PlayerSpeed = currentGameMode.playerStartSpeed;
         
-        if(!GetPlayerObject)
+        if(!PlayerObject)
             throw new Exception("Could Not Find Player GameObject");
     }
 

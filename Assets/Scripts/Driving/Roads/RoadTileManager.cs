@@ -18,7 +18,7 @@ namespace Driving.Roads
         // Start is called before the first frame update
         void Start()
         {
-            _playerTransform = GameManager.Instance.GetPlayerObject.transform;
+            _playerTransform = GameManager.Instance.PlayerObject.transform;
             for (int i = 0; i < tilesToSpawn; i++)
             {
                 SpawnTile();
