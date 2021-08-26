@@ -1,11 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using common;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class PhoneSlider : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler, IPointerDownHandler
+public class PhoneSlider : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerDownHandler
 {
     [Header("References")] 
     [SerializeField] private RectTransform phoneFrame;
@@ -44,13 +45,6 @@ public class PhoneSlider : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
         }
     }
 
-    public void OnBeginDrag(PointerEventData eventData)
-    {
-        if (!_allowDrag) return;
-        
-        _startingPosition = phoneFrame.anchoredPosition;
-    }
-
     public void OnEndDrag(PointerEventData eventData)
     {
         if (!_allowDrag) return;
@@ -64,13 +58,6 @@ public class PhoneSlider : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
         if (clicked != phoneFrame.gameObject)
             return;
         
-        Vector3 point = clicked.transform.worldToLocalMatrix.MultiplyPoint(eventData.pressPosition);
-        Texture2D pic = clicked.transform.gameObject.GetComponent<Image>().sprite.texture;
-        
-        Vector2 uv = new Vector2((point.x/1228f) +.5f , (point.y/1228f) +.5f);
-        
-        float alpha = pic.GetPixel((int) (uv.x * pic.width), (int) (uv.y * pic.height)).a;
-
-        _allowDrag = alpha >= .5f;
+        _allowDrag = (common.Raycast.CheckIfTransparencyHit(eventData.pointerPressRaycast, eventData.pressPosition) != null);
     }
 }
