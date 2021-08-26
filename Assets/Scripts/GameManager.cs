@@ -13,6 +13,12 @@ public class GameManager : Singleton<GameManager>
     [SerializeField]
     private GameModes currentGameMode;
     public GameObject GetPlayerObject { get; private set; }
+    
+    [Header("Scoring")] 
+    [SerializeField]
+    private float _gameTime;
+
+    
 
     private void Awake()
     {
