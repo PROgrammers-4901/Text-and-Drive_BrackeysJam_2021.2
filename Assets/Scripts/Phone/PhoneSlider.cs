@@ -1,15 +1,12 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using common;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 public class PhoneSlider : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerDownHandler
 {
     [Header("References")] 
     [SerializeField] private RectTransform phoneFrame;
+    [SerializeField] private List<RectTransform> extraHandles = new List<RectTransform>();
     [SerializeField] private Canvas canvas;
     
     [Header("Settings")] 
@@ -55,6 +52,13 @@ public class PhoneSlider : MonoBehaviour, IDragHandler, IEndDragHandler, IPointe
     public void OnPointerDown(PointerEventData eventData)
     {
         GameObject clicked = eventData.pointerPressRaycast.gameObject;
+        
+        if(extraHandles.Contains(clicked.GetComponent<RectTransform>()))
+        {
+            _allowDrag = true;
+            return;
+        }
+        
         if (clicked != phoneFrame.gameObject)
             return;
         

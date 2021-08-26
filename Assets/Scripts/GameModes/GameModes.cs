@@ -6,6 +6,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/GameMode", order = 1)]
 public class GameModes : ScriptableObject
 {
+
+    [Header("Microgames")]
     public MicrogameScriptableObject[] microgamesCollection;
 
     [Header("Settings")]
@@ -15,5 +17,17 @@ public class GameModes : ScriptableObject
     [Range(0f,10f)]
     public float maxTimeBetweenMicrogames = 10f;
 
+    [Header("Player Settings")]
+    [Range(.5f, 3f)]
     public float playerStartSpeed = 1f;
+
+    public Difficulty initialDifficulty = Difficulty.Normal;
+}
+
+public enum Difficulty
+{
+    SundayDrive,
+    Normal,
+    LateForWork,
+    RushHour
 }
