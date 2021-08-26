@@ -14,4 +14,6 @@ public class GameModes : ScriptableObject
     public float minTimeBetweenMicrogames = 5f;
     [Range(0f,10f)]
     public float maxTimeBetweenMicrogames = 10f;
+
+    public float playerStartSpeed = 1f;
 }
