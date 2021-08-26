@@ -17,8 +17,6 @@ public class Dial : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerDownHa
     [SerializeField] private bool returnToZero = true;
     [SerializeField] private float returnSpeed = .03f;
     
-    
-    
     private bool _allowDrag = false;
     private float _mouseDelta = 0;
     private float currentAngle = 0f;
@@ -70,9 +68,6 @@ public class Dial : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerDownHa
         
         Vector3 point = steeringWheel.gameObject.transform.worldToLocalMatrix.MultiplyPoint(eventData.position);
         _uvClick = new Vector2((point.x/steeringWheel.sizeDelta.x), (point.y/steeringWheel.sizeDelta.y));
-        
-        Debug.Log(_uvClick);
-        
         
         _allowDrag = (common.Raycast.CheckIfTransparencyHit(eventData.pointerPressRaycast, eventData.pressPosition) != null);
     }

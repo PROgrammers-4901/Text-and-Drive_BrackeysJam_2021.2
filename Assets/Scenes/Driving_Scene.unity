@@ -443,11 +443,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db3917bcf8cb02548a384cdc0b161447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  steeringWheel: {fileID: 1178320030}
   moveSpeed: 1
   strafeSpeed: 1
-  steeringWheel: {fileID: 1178320030}
+  brakeCooldownInSeconds: 5
+  acceleration: 0.01
+  turnSpeed: 0.065
   xDistance: {x: -60, y: 60}
-  brakeCooldown: 5
 --- !u!1 &921916961
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,6 +676,7 @@ MonoBehaviour:
   tileLength: 100
   tilePrefabs:
   - {fileID: 7185169777070087518, guid: edd0c26c71160ba4ebff7bf4d3c22987, type: 3}
+  - {fileID: 3280765753219545776, guid: 8a6a93bb3272b6540a21bbe51ed2f979, type: 3}
   safeZone: 50
 --- !u!4 &1893085586
 Transform:
