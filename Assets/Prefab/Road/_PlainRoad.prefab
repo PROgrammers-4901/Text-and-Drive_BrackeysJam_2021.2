@@ -105,8 +105,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7709138429104753459}
+  - component: {fileID: 970348653624972375}
   m_Layer: 0
-  m_Name: ClearRoadTile
+  m_Name: _PlainRoad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -129,6 +130,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &970348653624972375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7185169777070087518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c32e261396745743a97e4008a03c53e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Vehicles: []
+  Hazards: []
 --- !u!1 &7303363437086172972
 GameObject:
   m_ObjectHideFlags: 0

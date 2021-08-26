@@ -18,3 +18,5 @@ MonoBehaviour:
   allowRepetition: 1
   minTimeBetweenMicrogames: 5
   maxTimeBetweenMicrogames: 10
+  playerStartSpeed: 1
+  initialDifficulty: 1

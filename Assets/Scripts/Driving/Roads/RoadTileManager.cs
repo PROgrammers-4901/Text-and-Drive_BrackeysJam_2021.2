@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Driving.Roads
 {
@@ -30,7 +31,7 @@ namespace Driving.Roads
         {
             if (_playerTransform.position.z - safeZone > (lastSpawnZ - tilesToSpawn * tileLength))
             {
-                SpawnTile();
+                SpawnTile(Random.Range(0, tilePrefabs.Count));
                 DeleteOldestTile();
             }
         }
@@ -38,7 +39,7 @@ namespace Driving.Roads
         void SpawnTile(int prefabIndex = 0)
         {
             GameObject go;
-            go = Instantiate(tilePrefabs[prefabIndex]) as GameObject;
+            go = Instantiate(tilePrefabs[prefabIndex]);
         
             tileInstances.Add(go);
             go.transform.SetParent(transform);
@@ -48,6 +49,7 @@ namespace Driving.Roads
 
         void DeleteOldestTile()
         {
+            GameManager.Instance.DrivingScore += tileInstances[0].GetComponent<RoadTile>().TileDifficulty;
             Destroy(tileInstances[0]);
             tileInstances.RemoveAt(0);
         }

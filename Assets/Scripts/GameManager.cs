@@ -13,9 +13,12 @@ public class GameManager : Singleton<GameManager>
     [SerializeField]
     private GameModes currentGameMode;
     
-    [Header("Scoring")] 
-    [SerializeField]
-    private float _gameTime;
+    public float GameTime { get; private set; }
+    public Difficulty Difficulty { get; private set; }
+    private bool paused;
+
+    public float DrivingScore { get; set; }
+    public float PhoneScore { get; set; }
 
     public GameObject PlayerObject { get; private set; }
     public float PlayerSpeed { get; private set; }
@@ -24,9 +27,19 @@ public class GameManager : Singleton<GameManager>
     {
         PlayerObject = GameObject.FindGameObjectWithTag("Player");
         PlayerSpeed = currentGameMode.playerStartSpeed;
+
+        Difficulty = currentGameMode.initialDifficulty;
         
         if(!PlayerObject)
             throw new Exception("Could Not Find Player GameObject");
+    }
+
+    private void Update()
+    {
+        if (!paused)
+        { 
+            GameTime += Time.deltaTime;
+        }
     }
 
     public GameObject FindCommonGameObjectByName(string name) =>
