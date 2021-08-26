@@ -12,12 +12,20 @@ public class GameManager : Singleton<GameManager>
     private GameObject[] commonGameObjects;
     [SerializeField]
     private GameModes currentGameMode;
+    public GameObject GetPlayerObject { get; private set; }
+    
+    [Header("Scoring")] 
+    [SerializeField]
+    private float _gameTime;
 
-    private float idleTime;
+    
 
-    private void Update()
+    private void Awake()
     {
+        GetPlayerObject = GameObject.FindGameObjectWithTag("Player");
         
+        if(!GetPlayerObject)
+            throw new Exception("Could Not Find Player GameObject");
     }
 
     public GameObject FindCommonGameObjectByName(string name) =>
@@ -33,4 +41,6 @@ public class GameManager : Singleton<GameManager>
 
     public float GetMicrogameInterval() =>
         Random.Range(currentGameMode.minTimeBetweenMicrogames, currentGameMode.maxTimeBetweenMicrogames);
+
+    
 }

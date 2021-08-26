@@ -20,7 +20,7 @@ namespace Phone
 
         private void Awake()
         {
-            if (!phoneScreenContainer)
+            if (phoneScreenContainer == null)
                 throw new Exception("Phone Screen Container Not Set");
         }
 

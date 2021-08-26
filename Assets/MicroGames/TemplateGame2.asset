@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   appName: This is a copy
   notificationText: Hmm this is formatted weird
-  appLogo: {fileID: 0}
+  appLogo: {fileID: 21300000, guid: f2fededf74dc5594f904770ecd3f7229, type: 3}
   microgame: {fileID: 651353342517960279, guid: 1352e5af5df17ef47b7461cf119ce270, type: 3}

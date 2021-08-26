@@ -815,8 +815,8 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6187537341988635530}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 468.1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6187537341116913146}
@@ -824,10 +824,10 @@ RectTransform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 212.1, y: -14.3}
-  m_SizeDelta: {x: 225, y: 400}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 450, y: 840}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &6187537341988635525
 Canvas:
@@ -907,6 +907,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 6187537340572954932}
   _randomizeObjectives: 0
+  MicrogameCompleted:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7201085656030414977
 GameObject:
   m_ObjectHideFlags: 0
