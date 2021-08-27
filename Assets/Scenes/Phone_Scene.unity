@@ -235,10 +235,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 274751617}
     m_Modifications:
+    - target: {fileID: 5101789074758713860, guid: 82f17a8f1ef9012438eea248bf75cb00, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5101789074758713860, guid: 82f17a8f1ef9012438eea248bf75cb00, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -8241698570571209601, guid: 8f1f0fe292e5bb6458b7be800ee42bf2, type: 3}
     - target: {fileID: 8084771172416122421, guid: 82f17a8f1ef9012438eea248bf75cb00, type: 3}
       propertyPath: canvas
       value: 
       objectReference: {fileID: 274751616}
+    - target: {fileID: 8084771172416122421, guid: 82f17a8f1ef9012438eea248bf75cb00, type: 3}
+      propertyPath: affectsPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8307062014923316445, guid: 82f17a8f1ef9012438eea248bf75cb00, type: 3}
+      propertyPath: m_fontSize
+      value: 172
+      objectReference: {fileID: 0}
+    - target: {fileID: 8307062014923316445, guid: 82f17a8f1ef9012438eea248bf75cb00, type: 3}
+      propertyPath: m_margin.w
+      value: -141.19835
+      objectReference: {fileID: 0}
     - target: {fileID: 8927666418677458696, guid: 82f17a8f1ef9012438eea248bf75cb00, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

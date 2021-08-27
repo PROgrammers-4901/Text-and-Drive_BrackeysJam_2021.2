@@ -56,5 +56,15 @@ public class GameManager : Singleton<GameManager>
     public float GetMicrogameInterval() =>
         Random.Range(currentGameMode.minTimeBetweenMicrogames, currentGameMode.maxTimeBetweenMicrogames);
 
+    public void PauseGame()
+    {
+        paused = true;
+        Time.timeScale = 0;
+    }
     
+    public void ResumeGame()
+    {
+        paused = false;
+        Time.timeScale = 1;
+    }
 }

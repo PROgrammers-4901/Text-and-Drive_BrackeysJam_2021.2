@@ -39,13 +39,11 @@ public class playerController : MonoBehaviour
     {
         if (Input.GetButtonDown("Brake") && !braking && brakingAllowed)
         {
-            Debug.Log("BRAKE");
-            
             braking = true;
             brakingAllowed = false;
             Invoke(nameof(StopBraking), 1f);
-
-            Time.timeScale = 1;
+            
+            GameManager.Instance.ResumeGame();
         }
     }
 
@@ -93,7 +91,8 @@ public class playerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("KillObject"))
         {
-            Time.timeScale = 0;
+            Debug.Log("GAME OVER");
+            GameManager.Instance.PauseGame();
         }
     }
 }
