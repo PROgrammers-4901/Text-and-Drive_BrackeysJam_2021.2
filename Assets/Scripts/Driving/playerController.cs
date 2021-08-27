@@ -7,6 +7,8 @@ public class playerController : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Dial steeringWheel;
+
+    private BoxCollider _bc;
     
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 1;
@@ -21,6 +23,11 @@ public class playerController : MonoBehaviour
 
     private bool braking = false;
     private bool brakingAllowed = false;
+
+    private void Awake()
+    {
+        _bc = GetComponent<BoxCollider>();
+    }
 
     private void Start()
     {
@@ -37,6 +44,8 @@ public class playerController : MonoBehaviour
             braking = true;
             brakingAllowed = false;
             Invoke(nameof(StopBraking), 1f);
+
+            Time.timeScale = 1;
         }
     }
 
@@ -78,5 +87,13 @@ public class playerController : MonoBehaviour
     {
         Debug.Log("Brake Allowed");
         brakingAllowed = true;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("KillObject"))
+        {
+            Time.timeScale = 0;
+        }
     }
 }
