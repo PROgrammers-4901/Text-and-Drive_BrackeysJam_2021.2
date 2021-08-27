@@ -12,6 +12,9 @@ public class GameManager : Singleton<GameManager>
     private List<GameObject> commonGameObjects = new List<GameObject>();
     [SerializeField]
     private GameModes currentGameMode;
+
+    [SerializeField] private float difficultyScaler = 30f;
+    
     
     public float GameTime { get; private set; }
     public Difficulty Difficulty { get; private set; }
@@ -67,4 +70,7 @@ public class GameManager : Singleton<GameManager>
         paused = false;
         Time.timeScale = 1;
     }
+
+    public float GetScaledDifficulty() => (float) Difficulty + GameTime / difficultyScaler;
+    public float GetScaledSpeed() => PlayerSpeed + GetScaledDifficulty() / 5;
 }

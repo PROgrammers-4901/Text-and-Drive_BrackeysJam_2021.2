@@ -10,6 +10,7 @@ namespace Phone
         [SerializeField] private GameObject phoneScreenContainer;
         [SerializeField] private GameObject notificationContainer;
         [SerializeField] private GameObject notificationPrefab;
+        [SerializeField] private int playerLives = 4;
 
         private List<GameObject> _notificationInstances = new List<GameObject>();
         private GameObject _microgameInstance;
@@ -28,7 +29,13 @@ namespace Phone
 
         private void Update()
         {
-            _idleTime += Time.deltaTime * _notificationInstances.Count;
+            if (_notificationInstances.Count > 0)
+                _idleTime += Time.deltaTime * _notificationInstances.Count;
+            else
+                _idleTime = Mathf.Clamp(_idleTime - Time.deltaTime, 0, float.MaxValue);
+            
+            if(_notificationInstances.Count > 15 && _idleTime > 60f)
+                GameManager.Instance.PauseGame();
         }
 
         void SpawnNotification(MicrogameScriptableObject microgame)

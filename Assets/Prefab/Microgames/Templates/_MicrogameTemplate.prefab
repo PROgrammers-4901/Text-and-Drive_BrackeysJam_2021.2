@@ -725,7 +725,7 @@ GameObject:
   - component: {fileID: 651353342517960283}
   - component: {fileID: 651353342517960279}
   m_Layer: 5
-  m_Name: MicrogameCanvasTemplate
+  m_Name: _MicrogameTemplate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

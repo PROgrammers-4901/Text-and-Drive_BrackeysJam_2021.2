@@ -31,7 +31,6 @@ public class playerController : MonoBehaviour
 
     private void Start()
     {
-        SetSpeed(GameManager.Instance.PlayerSpeed);
         Invoke(nameof(AllowBraking), brakeCooldownInSeconds * 3f);
     }
 
@@ -67,16 +66,15 @@ public class playerController : MonoBehaviour
         );
         
         if (braking)
-            SetSpeed(GameManager.Instance.PlayerSpeed/5f);
+            SetSpeed(GameManager.Instance.GetScaledSpeed()/5f);
         else
-            SetSpeed(GameManager.Instance.PlayerSpeed);
+            SetSpeed(GameManager.Instance.GetScaledSpeed());
     }
 
     public void SetSpeed(float speed) => moveSpeed = Mathf.Lerp(moveSpeed, speed, acceleration);
 
     public void StopBraking()
     {
-        moveSpeed = GameManager.Instance.PlayerSpeed;
         braking = false;
         Invoke(nameof(AllowBraking), brakeCooldownInSeconds);
     }

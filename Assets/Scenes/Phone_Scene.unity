@@ -347,5 +347,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: PhoneContainer
       objectReference: {fileID: 0}
+    - target: {fileID: 8927666418767543441, guid: 82f17a8f1ef9012438eea248bf75cb00, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8927666418978128415, guid: 82f17a8f1ef9012438eea248bf75cb00, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8927666418995353148, guid: 82f17a8f1ef9012438eea248bf75cb00, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8927666419103594444, guid: 82f17a8f1ef9012438eea248bf75cb00, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8927666419910270643, guid: 82f17a8f1ef9012438eea248bf75cb00, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8927666420321328774, guid: 82f17a8f1ef9012438eea248bf75cb00, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82f17a8f1ef9012438eea248bf75cb00, type: 3}

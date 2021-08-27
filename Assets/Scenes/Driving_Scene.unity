@@ -251,6 +251,7 @@ GameObject:
   - component: {fileID: 392594547}
   - component: {fileID: 392594549}
   - component: {fileID: 392594548}
+  - component: {fileID: 392594550}
   m_Layer: 6
   m_Name: Dial
   m_TagString: Untagged
@@ -265,13 +266,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 392594546}
-  m_LocalRotation: {x: -0, y: -0, z: 0.09935785, w: 0.9950518}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1736151315}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 11.404}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -61.7, y: -65.3}
@@ -315,6 +316,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 392594546}
   m_CullTransparentMesh: 1
+--- !u!114 &392594550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392594546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0bc02e62e2c15d4a99d35b8ef1537f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &593496114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -584,7 +597,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   steeringWheel: {fileID: 1178320030}
-  moveSpeed: 1
+  moveSpeed: 0
   strafeSpeed: 1
   brakeCooldownInSeconds: 5
   acceleration: 0.01

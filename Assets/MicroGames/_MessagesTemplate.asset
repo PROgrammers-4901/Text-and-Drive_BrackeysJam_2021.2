@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 339806e1f006ae2469ce0815e16c30d8, type: 3}
+  m_Name: _MessagesTemplate
+  m_EditorClassIdentifier: 
+  appName: Messages
+  notificationText: Reply to your boss!
+  appLogo: {fileID: 1102856127206871855, guid: 8f1f0fe292e5bb6458b7be800ee42bf2, type: 3}
+  microgame: {fileID: 5536876524490090256, guid: 78b699520dec1c645a76c8fcdb1e446c, type: 3}

@@ -16,12 +16,12 @@ public class RoadTile : MonoBehaviour
         foreach (var hazard in Hazards)
             hazard.SetActive(false);
         
-        TileDifficulty = (float) GameManager.Instance.Difficulty + GameManager.Instance.GameTime / 30f;
+        TileDifficulty = (float) GameManager.Instance.GetScaledDifficulty();
 
         if (Vehicles.Count + Hazards.Count < 2)
             TileDifficulty = 1;
 
-        int obstaclesToSpawn = Mathf.RoundToInt(TileDifficulty);
+        int obstaclesToSpawn = 2 + Mathf.RoundToInt(TileDifficulty);
         for (int i = 0; i < obstaclesToSpawn; i++)
         {
             if (Random.Range(0, 2) == 0 && Vehicles.Count > 0)
