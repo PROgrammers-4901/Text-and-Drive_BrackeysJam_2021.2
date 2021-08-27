@@ -9,7 +9,7 @@ using Random = UnityEngine.Random;
 public class GameManager : Singleton<GameManager>
 {
     [SerializeField]
-    private GameObject[] commonGameObjects;
+    private List<GameObject> commonGameObjects = new List<GameObject>();
     [SerializeField]
     private GameModes currentGameMode;
     
@@ -46,7 +46,7 @@ public class GameManager : Singleton<GameManager>
         commonGameObjects.FirstOrDefault(commonGameObject => commonGameObject.name == name);
 
     public void AddGameObjectToCommon(GameObject gameObject) =>
-        commonGameObjects.Append(gameObject);
+        commonGameObjects.Add(gameObject);
 
     public MicrogameScriptableObject GetRandomMicrogame() =>
         currentGameMode.microgamesCollection.ElementAt(
