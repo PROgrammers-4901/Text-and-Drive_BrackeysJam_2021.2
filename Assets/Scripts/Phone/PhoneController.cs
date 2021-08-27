@@ -9,14 +9,11 @@ namespace Phone
     {
         [SerializeField] private GameObject phoneScreenContainer;
         [SerializeField] private GameObject notificationContainer;
-        [SerializeField] private GameObject _notificationPrefab;
+        [SerializeField] private GameObject notificationPrefab;
 
-
-        private List<MicrogameScriptableObject> loadedMicroGames = new List<MicrogameScriptableObject>();
-        private List<GameObject> notificationInstances = new List<GameObject>();
-        private GameObject microgameInstance;
-
-        private float elapsedTime;
+        private List<GameObject> _notificationInstances = new List<GameObject>();
+        private GameObject _microgameInstance;
+        private float _idleTime;
 
         private void Awake()
         {
@@ -29,20 +26,25 @@ namespace Phone
             Invoke(nameof(FetchMicrogame), GameManager.Instance.GetMicrogameInterval());
         }
 
+        private void Update()
+        {
+            _idleTime += Time.deltaTime * _notificationInstances.Count;
+        }
+
         void SpawnNotification(MicrogameScriptableObject microgame)
         {
             // Spawn Sound
-            Debug.Log("DING DING");
+            Debug.Log("BRzzt BRzzt");
 
             if (!phoneScreenContainer.activeSelf)
                 phoneScreenContainer.SetActive(true);
 
             // Spawn Notification
-            GameObject notification = Instantiate(_notificationPrefab, notificationContainer.transform);
+            GameObject notification = Instantiate(notificationPrefab, notificationContainer.transform);
             NotificationDisplay nd = notification.GetComponent<NotificationDisplay>();
             nd.InitializeNotification(microgame);
             nd.SpawnMicrogame.AddListener(HandleSpawnButton);
-            notificationInstances.Add(notification);
+            _notificationInstances.Add(notification);
 
             // Start Timer
         }
@@ -58,26 +60,23 @@ namespace Phone
         {
             MicrogameScriptableObject newGame = GameManager.Instance.GetRandomMicrogame();
 
-            loadedMicroGames.Add(newGame);
-
             SpawnNotification(newGame);
             Invoke(nameof(FetchMicrogame), GameManager.Instance.GetMicrogameInterval());
         }
 
         public void HandleMicrogameComplete(Microgame microgame)
         {
-            Destroy(microgameInstance);
+            Destroy(_microgameInstance);
 
-            Debug.Log("MICROGAME CONTROLLER EVENT HANDLER");
+            GameManager.Instance.PhoneScore++;
         }
 
         void HandleSpawnButton(NotificationDisplay nd)
         {
-            Debug.Log("TEST");
+            _microgameInstance = Instantiate(nd.microgame, phoneScreenContainer.transform);
+            _notificationInstances.Remove(nd.gameObject);
             
-            microgameInstance = Instantiate(nd.microgame, phoneScreenContainer.transform);
-
-            Microgame microgame = microgameInstance.GetComponent<Microgame>();
+            Microgame microgame = _microgameInstance.GetComponent<Microgame>();
             microgame.MicrogameCompleted.AddListener(HandleMicrogameComplete);
             
             Destroy(nd.gameObject);
