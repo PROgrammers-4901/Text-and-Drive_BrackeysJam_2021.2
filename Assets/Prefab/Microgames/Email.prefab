@@ -1099,7 +1099,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &2632779147118014367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1130,8 +1130,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectives:
-  - {fileID: 2632779147047143318}
-  - {fileID: 1116405578000224009}
+  - {fileID: 0}
+  - {fileID: 0}
   _randomizeObjectives: 0
   MicrogameCompleted:
     m_PersistentCalls:
