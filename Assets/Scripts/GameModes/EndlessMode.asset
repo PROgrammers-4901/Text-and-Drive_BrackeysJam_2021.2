@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: EndlessMode
   m_EditorClassIdentifier: 
   microgamesCollection:
-  - {fileID: 11400000, guid: 41dd540223c5b2e439c49c8dfcb61f77, type: 2}
-  - {fileID: 11400000, guid: 56b9d8ae2eb51b5448880270b13cc7e1, type: 2}
+  - {fileID: 11400000, guid: e8f9bd8a149a5d8409a76b7933c08115, type: 2}
   allowRepetition: 1
   minTimeBetweenMicrogames: 5
   maxTimeBetweenMicrogames: 10

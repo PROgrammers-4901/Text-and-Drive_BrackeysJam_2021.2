@@ -34,7 +34,7 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0
   focusDistance:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 100
     min: 0.1
   aperture:
@@ -43,8 +43,8 @@ MonoBehaviour:
     min: 1
     max: 32
   focalLength:
-    m_OverrideState: 0
-    m_Value: 1
+    m_OverrideState: 1
+    m_Value: 100
     min: 1
     max: 300
   bladeCount:
@@ -77,26 +77,6 @@ MonoBehaviour:
   components:
   - {fileID: -3708965945131776239}
   - {fileID: 9220188944329273832}
-  - {fileID: 2061967390916011343}
---- !u!114 &2061967390916011343
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81180773991d8724ab7f2d216912b564, type: 3}
-  m_Name: ChromaticAberration
-  m_EditorClassIdentifier: 
-  active: 1
-  m_AdvancedMode: 0
-  intensity:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-    max: 1
 --- !u!114 &9220188944329273832
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -109,15 +89,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b2db86121404754db890f4c8dfe81b2, type: 3}
   m_Name: Bloom
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   threshold:
     m_OverrideState: 1
-    m_Value: 0.9
+    m_Value: 0.72
     min: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 15.52
+    m_Value: 2
     min: 0
   scatter:
     m_OverrideState: 0

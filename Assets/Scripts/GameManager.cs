@@ -12,6 +12,9 @@ public class GameManager : Singleton<GameManager>
     private List<GameObject> commonGameObjects = new List<GameObject>();
     [SerializeField]
     private GameModes currentGameMode;
+
+    [SerializeField] private float difficultyScaler = 30f;
+    
     
     public float GameTime { get; private set; }
     public Difficulty Difficulty { get; private set; }
@@ -20,18 +23,14 @@ public class GameManager : Singleton<GameManager>
     public float DrivingScore { get; set; }
     public float PhoneScore { get; set; }
 
-    public GameObject PlayerObject { get; private set; }
+    public GameObject PlayerObject { get; set; }
     public float PlayerSpeed { get; private set; }
 
     private void Awake()
     {
-        PlayerObject = GameObject.FindGameObjectWithTag("Player");
         PlayerSpeed = currentGameMode.playerStartSpeed;
 
         Difficulty = currentGameMode.initialDifficulty;
-        
-        if(!PlayerObject)
-            throw new Exception("Could Not Find Player GameObject");
     }
 
     private void Update()
@@ -41,6 +40,8 @@ public class GameManager : Singleton<GameManager>
             GameTime += Time.deltaTime;
         }
     }
+    
+    // TODO: Game Pause Menu
 
     public GameObject FindCommonGameObjectByName(string name) =>
         commonGameObjects.FirstOrDefault(commonGameObject => commonGameObject.name == name);
@@ -53,8 +54,30 @@ public class GameManager : Singleton<GameManager>
         Random.Range(0, currentGameMode.microgamesCollection.Length)
         );
 
+    public void PauseGame()
+    {
+        paused = true;
+        Time.timeScale = 0;
+    }
+    
+    public void ResumeGame()
+    {
+        paused = false;
+        Time.timeScale = 1;
+    }
+
+    public void GameOver()
+    {
+        PauseGame();
+        
+        Debug.Log("GAME OVER");
+        
+        //TODO: Render GameOver Screen
+    }
+    
     public float GetMicrogameInterval() =>
         Random.Range(currentGameMode.minTimeBetweenMicrogames, currentGameMode.maxTimeBetweenMicrogames);
-
     
+    public float GetScaledDifficulty() => (float) Difficulty + GameTime / difficultyScaler;
+    public float GetScaledSpeed() => PlayerSpeed + GetScaledDifficulty() / 5;
 }

@@ -15,7 +15,7 @@ public class PhoneSlider : MonoBehaviour, IDragHandler, IEndDragHandler, IPointe
     [SerializeField] private float maxTravelDistance = 1000f;
     [SerializeField] private Vector2 minScreenPosition;
     [SerializeField] private Vector2 maxScreenPosition;
-
+    
     private bool _allowDrag = false;
     private Vector2 _startingPosition;
 
@@ -40,7 +40,7 @@ public class PhoneSlider : MonoBehaviour, IDragHandler, IEndDragHandler, IPointe
 
             GameObject go = GameManager.Instance.FindCommonGameObjectByName("PostProcessing");
             PostProcessing ppv = go.GetComponent<PostProcessing>();
-            
+
             ppv.SetFocalLength((Vector2.Distance(_startingPosition, newPosition) / maxTravelDistance) * 300f);
         }
     }
