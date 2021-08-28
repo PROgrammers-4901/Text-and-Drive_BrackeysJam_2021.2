@@ -13,10 +13,22 @@ MonoBehaviour:
   m_Name: EndlessMode
   m_EditorClassIdentifier: 
   microgamesCollection:
+<<<<<<< Updated upstream
   - {fileID: 11400000, guid: 41dd540223c5b2e439c49c8dfcb61f77, type: 2}
   - {fileID: 11400000, guid: 56b9d8ae2eb51b5448880270b13cc7e1, type: 2}
+  - {fileID: 11400000, guid: e8f9bd8a149a5d8409a76b7933c08115, type: 2}
   allowRepetition: 1
   minTimeBetweenMicrogames: 5
   maxTimeBetweenMicrogames: 10
   playerStartSpeed: 1
   initialDifficulty: 1
+=======
+  - {fileID: 7767679850162554254, guid: 8a57634d5de019e44b6873c049bd402e, type: 3}
+  - {fileID: 758203961288850712, guid: e2e617c5ec2cbe8448f6db6ba08483e0, type: 3}
+  - {fileID: 694841899895381829, guid: 687c07f9072d0fb488f6f6e3e9fe38e1, type: 3}
+  - {fileID: 7767679850162554254, guid: 858b035f4d7150545af592daec1af81c, type: 3}
+  - {fileID: 6187537341988635527, guid: 5ac1520fbcdce7546af6aaa2ce7cf9dc, type: 3}
+  allowRepetition: 1
+  minTimeBetweenMicrogames: 0.24
+  maxTimeBetweenMicrogames: 1.55
+>>>>>>> Stashed changes

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Microgames
@@ -9,5 +10,7 @@ namespace Microgames
         public string notificationText;
         public Sprite appLogo;
         public Microgame microgame;
+
+        public List<AudioClip> NotificationSounds = new List<AudioClip>();
     }
 }

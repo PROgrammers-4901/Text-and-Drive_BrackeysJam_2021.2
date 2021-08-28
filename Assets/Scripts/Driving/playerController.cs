@@ -1,14 +1,16 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class playerController : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Dial steeringWheel;
-
-    private BoxCollider _bc;
+    [SerializeField] private AudioClip brakingSound;
+    
+    
     
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 1;
@@ -18,20 +20,19 @@ public class playerController : MonoBehaviour
     [SerializeField] private float acceleration;
     [Range(0f,1f)]
     [SerializeField] private float turnSpeed;
-    
     [SerializeField] private Vector2 xDistance = new Vector2(-60f, 60f);
+    
+    [Header("Health")] [SerializeField]
+    private int playerHealth;
 
     private bool braking = false;
     private bool brakingAllowed = false;
-
-    private void Awake()
-    {
-        _bc = GetComponent<BoxCollider>();
-    }
+    private AudioSource brakeSound;
+    private bool fadeOut;
 
     private void Start()
     {
-        SetSpeed(GameManager.Instance.PlayerSpeed);
+        GameManager.Instance.PlayerObject = this.gameObject;
         Invoke(nameof(AllowBraking), brakeCooldownInSeconds * 3f);
     }
 
@@ -39,14 +40,20 @@ public class playerController : MonoBehaviour
     {
         if (Input.GetButtonDown("Brake") && !braking && brakingAllowed)
         {
-            Debug.Log("BRAKE");
+            brakeSound = SoundManager.Instance.PlaySound("Car Brake");
+            brakeSound.volume = 1f;
             
+            fadeOut = false;
             braking = true;
             brakingAllowed = false;
             Invoke(nameof(StopBraking), 1f);
-
-            Time.timeScale = 1;
         }
+
+        if (Input.GetButtonUp("Brake") && braking)
+            fadeOut = true;
+        
+        if (fadeOut && brakeSound)
+            brakeSound.volume -= Time.deltaTime*2;
     }
 
     // Update is called once per frame
@@ -69,16 +76,15 @@ public class playerController : MonoBehaviour
         );
         
         if (braking)
-            SetSpeed(GameManager.Instance.PlayerSpeed/5f);
+            SetSpeed(GameManager.Instance.GetScaledSpeed()/5f);
         else
-            SetSpeed(GameManager.Instance.PlayerSpeed);
+            SetSpeed(GameManager.Instance.GetScaledSpeed());
     }
 
     public void SetSpeed(float speed) => moveSpeed = Mathf.Lerp(moveSpeed, speed, acceleration);
 
     public void StopBraking()
     {
-        moveSpeed = GameManager.Instance.PlayerSpeed;
         braking = false;
         Invoke(nameof(AllowBraking), brakeCooldownInSeconds);
     }
@@ -89,11 +95,5 @@ public class playerController : MonoBehaviour
         brakingAllowed = true;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("KillObject"))
-        {
-            Time.timeScale = 0;
-        }
-    }
+    
 }

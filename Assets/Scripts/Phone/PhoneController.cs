@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Microgames;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Phone
 {
@@ -10,10 +11,13 @@ namespace Phone
         [SerializeField] private GameObject phoneScreenContainer;
         [SerializeField] private GameObject notificationContainer;
         [SerializeField] private GameObject notificationPrefab;
+        [SerializeField] private int playerLives = 4;
 
         private List<GameObject> _notificationInstances = new List<GameObject>();
         private GameObject _microgameInstance;
         private float _idleTime;
+
+        private bool firstMicrogame = true;
 
         private void Awake()
         {
@@ -21,20 +25,27 @@ namespace Phone
                 throw new Exception("Phone Screen Container Not Set");
         }
 
-        private void Start()
-        {
-            Invoke(nameof(FetchMicrogame), GameManager.Instance.GetMicrogameInterval());
-        }
-
         private void Update()
         {
-            _idleTime += Time.deltaTime * _notificationInstances.Count;
+            if (firstMicrogame)
+            {
+                Invoke(nameof(FetchMicrogame), GameManager.Instance.GetMicrogameInterval());
+                firstMicrogame = false;
+            }
+            
+            if (_notificationInstances.Count > 0)
+                _idleTime += Time.deltaTime * _notificationInstances.Count;
+            else
+                _idleTime = Mathf.Clamp(_idleTime - Time.deltaTime, 0, float.MaxValue);
+            
+            if(_notificationInstances.Count > 15 && _idleTime > 60f)
+                GameManager.Instance.PauseGame();
         }
 
         void SpawnNotification(MicrogameScriptableObject microgame)
         {
-            // Spawn Sound
-            Debug.Log("BRzzt BRzzt");
+            // TODO: Spawn Sound
+            SoundManager.Instance.PlaySound(microgame.NotificationSounds[Random.Range(0, microgame.NotificationSounds.Count)].name);
 
             if (!phoneScreenContainer.activeSelf)
                 phoneScreenContainer.SetActive(true);
@@ -68,6 +79,7 @@ namespace Phone
         {
             Destroy(_microgameInstance);
 
+            // TODO: Phone Fail State
             GameManager.Instance.PhoneScore++;
         }
 

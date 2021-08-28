@@ -16,3 +16,7 @@ MonoBehaviour:
   notificationText: This is a test
   appLogo: {fileID: 21300000, guid: f2fededf74dc5594f904770ecd3f7229, type: 3}
   microgame: {fileID: 651353342517960279, guid: 1352e5af5df17ef47b7461cf119ce270, type: 3}
+  NotificationSounds:
+  - {fileID: 8300000, guid: 512dbce07668a534992e3e64cda83dcb, type: 3}
+  - {fileID: 8300000, guid: 6df97a7411df9394393d2011a6da90d0, type: 3}
+  - {fileID: 8300000, guid: 6d4bce05897c93c42b619d374922528d, type: 3}

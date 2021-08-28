@@ -11,7 +11,7 @@ namespace Microgames.Objectives
         {
             _clickCount++;
         
-            if(_clickCount > requiredClicks)
+            if(_clickCount >= requiredClicks)
                 CompleteObjective();
         }
     
