@@ -116,8 +116,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
-    TEXT TEXT TEXT TEXT TEXT TEXT TEXT \u200B"
+  m_text: "\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -470,6 +469,7 @@ GameObject:
   - component: {fileID: 2034145493530132006}
   - component: {fileID: 3118881178195370400}
   - component: {fileID: 8929412861145061114}
+  - component: {fileID: 8729166445121591544}
   m_Layer: 5
   m_Name: InputField (TMP)
   m_TagString: Untagged
@@ -574,7 +574,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 3118881178195370400}
   m_TextViewport: {fileID: 8129772018188940469}
   m_TextComponent: {fileID: 3618008779414204531}
@@ -621,8 +621,7 @@ MonoBehaviour:
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  m_Text: 'TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
-    TEXT TEXT TEXT TEXT TEXT TEXT TEXT '
+  m_Text: 
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
@@ -634,6 +633,21 @@ MonoBehaviour:
   m_isRichTextEditingAllowed: 0
   m_LineLimit: 0
   m_InputValidator: {fileID: 0}
+--- !u!114 &8729166445121591544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061789166391586642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8949039c6f21c042b94b39f1396a229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputField: {fileID: 8929412861145061114}
+  text: Text Text Text, this is a text that I will send now
+  stepByWords: 1
 --- !u!1 &2151128119833447074
 GameObject:
   m_ObjectHideFlags: 0
@@ -1393,6 +1407,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8729166445121591544}
+        m_TargetAssemblyTypeName: TextField, Assembly-CSharp
+        m_MethodName: AddTextToField
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5536876524577558293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1405,7 +1431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d9d0f99ca2dba349a92fac1784f7d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requiredClicks: 24
+  requiredClicks: 12
 --- !u!1 &5536876525205694859
 GameObject:
   m_ObjectHideFlags: 0

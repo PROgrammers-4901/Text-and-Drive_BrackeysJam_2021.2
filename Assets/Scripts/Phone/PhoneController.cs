@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Microgames;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Phone
 {
@@ -16,19 +17,22 @@ namespace Phone
         private GameObject _microgameInstance;
         private float _idleTime;
 
+        private bool firstMicrogame = true;
+
         private void Awake()
         {
             if (phoneScreenContainer == null)
                 throw new Exception("Phone Screen Container Not Set");
         }
 
-        private void Start()
-        {
-            Invoke(nameof(FetchMicrogame), GameManager.Instance.GetMicrogameInterval());
-        }
-
         private void Update()
         {
+            if (firstMicrogame)
+            {
+                Invoke(nameof(FetchMicrogame), GameManager.Instance.GetMicrogameInterval());
+                firstMicrogame = false;
+            }
+            
             if (_notificationInstances.Count > 0)
                 _idleTime += Time.deltaTime * _notificationInstances.Count;
             else
@@ -40,8 +44,8 @@ namespace Phone
 
         void SpawnNotification(MicrogameScriptableObject microgame)
         {
-            // Spawn Sound
-            Debug.Log("BRzzt BRzzt");
+            // TODO: Spawn Sound
+            SoundManager.Instance.PlaySound(microgame.NotificationSounds[Random.Range(0, microgame.NotificationSounds.Count)]);
 
             if (!phoneScreenContainer.activeSelf)
                 phoneScreenContainer.SetActive(true);
@@ -75,6 +79,7 @@ namespace Phone
         {
             Destroy(_microgameInstance);
 
+            // TODO: Phone Fail State
             GameManager.Instance.PhoneScore++;
         }
 

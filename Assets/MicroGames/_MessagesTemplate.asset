@@ -16,3 +16,5 @@ MonoBehaviour:
   notificationText: Reply to your boss!
   appLogo: {fileID: 1102856127206871855, guid: 8f1f0fe292e5bb6458b7be800ee42bf2, type: 3}
   microgame: {fileID: 5536876524490090256, guid: 78b699520dec1c645a76c8fcdb1e446c, type: 3}
+  NotificationSounds:
+  - {fileID: 8300000, guid: 512dbce07668a534992e3e64cda83dcb, type: 3}
