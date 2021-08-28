@@ -59,12 +59,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carMaterials:
-  - {fileID: 2100000, guid: 4a5d9d3ade31dc741978a5ec39c2c4fe, type: 2}
-  - {fileID: 2100000, guid: 30960d85e9b71fb498fb2f21ce644f59, type: 2}
-  - {fileID: 2100000, guid: e783bd8e8f3eb904bb990763b1f8a6a4, type: 2}
-  - {fileID: 2100000, guid: aff5f7d51f340f947b10397b5b969bd5, type: 2}
-  - {fileID: 2100000, guid: d4fa210548dfc5247b393be2e96f866c, type: 2}
   - {fileID: 2100000, guid: 7541712b05882f84ea437068d0db5e5c, type: 2}
+  - {fileID: 2100000, guid: 30960d85e9b71fb498fb2f21ce644f59, type: 2}
+  - {fileID: 2100000, guid: aff5f7d51f340f947b10397b5b969bd5, type: 2}
+  carSideMaterials:
+  - {fileID: 2100000, guid: 620e3a6ae1aed494ea835c1c3fcc2ed7, type: 2}
+  - {fileID: 2100000, guid: 36ae593cf19c1b84698030a2dfff7a22, type: 2}
+  - {fileID: 2100000, guid: 956c9cf492abf3b458133933c2a9f0f9, type: 2}
   meshRenderer: {fileID: 3450226682723421765}
 --- !u!1 &1387027904264293715
 GameObject:
