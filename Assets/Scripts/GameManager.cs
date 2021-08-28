@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microgames;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class GameManager : Singleton<GameManager>
@@ -18,19 +19,19 @@ public class GameManager : Singleton<GameManager>
     
     public float GameTime { get; private set; }
     public Difficulty Difficulty { get; private set; }
-    private bool paused;
-
     public float DrivingScore { get; set; }
     public float PhoneScore { get; set; }
-
     public GameObject PlayerObject { get; set; }
     public float PlayerSpeed { get; private set; }
+    
+    private bool paused;
 
     private void Awake()
     {
         PlayerSpeed = currentGameMode.playerStartSpeed;
-
         Difficulty = currentGameMode.initialDifficulty;
+
+        StartGame();
     }
 
     private void Update()
@@ -40,8 +41,15 @@ public class GameManager : Singleton<GameManager>
             GameTime += Time.deltaTime;
         }
     }
-    
-    // TODO: Game Pause Menu
+
+    public void StartGame()
+    {
+        if(SceneManager.sceneCount < 3)
+        {
+            SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
+            SceneManager.LoadSceneAsync(2, LoadSceneMode.Additive);
+        }
+    }
 
     public GameObject FindCommonGameObjectByName(string name) =>
         commonGameObjects.FirstOrDefault(commonGameObject => commonGameObject.name == name);

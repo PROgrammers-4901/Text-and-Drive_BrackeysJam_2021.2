@@ -7,20 +7,14 @@ namespace Phone
     public class GameTimer : MonoBehaviour
     {
         [SerializeField] private TMP_Text timerText;
-        private int seconds;
-        private int minutes;
-        
 
         private void Update()
         {
-            float currentTime = Mathf.CeilToInt(Time.time - Time.deltaTime);
-            seconds = Mathf.CeilToInt(currentTime) % 60;
-            if (currentTime > 0 && seconds == 0)
-                minutes++;
-
+            float gameTime = GameManager.Instance.GameTime;
+            int minutes = Mathf.FloorToInt( gameTime / 60);
+            int seconds = (int)gameTime % 60;
             
-            
-            timerText.text = (minutes*100 + seconds).ToString("00:00");
+            timerText.text = minutes.ToString("00") + ":" + seconds.ToString("00");
         }
     }
 }

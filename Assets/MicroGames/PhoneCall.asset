@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 339806e1f006ae2469ce0815e16c30d8, type: 3}
-  m_Name: _MessagesTemplate
+  m_Name: PhoneCall
   m_EditorClassIdentifier: 
-  appName: Messages
-  notificationText: Better send that text!
-  appLogo: {fileID: 1102856127206871855, guid: 8f1f0fe292e5bb6458b7be800ee42bf2, type: 3}
-  microgame: {fileID: 5536876524490090256, guid: 78b699520dec1c645a76c8fcdb1e446c, type: 3}
+  appName: Phone
+  notificationText: <NAME> Is Calling!
+  appLogo: {fileID: 6549936278352523220, guid: 8f1f0fe292e5bb6458b7be800ee42bf2, type: 3}
+  microgame: {fileID: 7767679850162554254, guid: 858b035f4d7150545af592daec1af81c, type: 3}
   NotificationSounds:
-  - {fileID: 8300000, guid: 512dbce07668a534992e3e64cda83dcb, type: 3}
+  - {fileID: 8300000, guid: 6df97a7411df9394393d2011a6da90d0, type: 3}

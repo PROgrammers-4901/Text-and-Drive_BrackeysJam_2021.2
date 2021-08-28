@@ -228,6 +228,35 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8927666418677458696, guid: 82f17a8f1ef9012438eea248bf75cb00, type: 3}
   m_PrefabInstance: {fileID: 8927666419210834633}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1067095517 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8307062014923316433, guid: 82f17a8f1ef9012438eea248bf75cb00, type: 3}
+  m_PrefabInstance: {fileID: 8927666419210834633}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1067095519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067095517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa3367612e60cb41b21a9382e847c78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerText: {fileID: 1067095520}
+--- !u!114 &1067095520 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8307062014923316445, guid: 82f17a8f1ef9012438eea248bf75cb00, type: 3}
+  m_PrefabInstance: {fileID: 8927666419210834633}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067095517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8927666419210834633
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -258,6 +287,14 @@ PrefabInstance:
     - target: {fileID: 8307062014923316445, guid: 82f17a8f1ef9012438eea248bf75cb00, type: 3}
       propertyPath: m_margin.w
       value: -141.19835
+      objectReference: {fileID: 0}
+    - target: {fileID: 8307062014923316445, guid: 82f17a8f1ef9012438eea248bf75cb00, type: 3}
+      propertyPath: m_margin.x
+      value: 9.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8307062014923316446, guid: 82f17a8f1ef9012438eea248bf75cb00, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8307062015262618100, guid: 82f17a8f1ef9012438eea248bf75cb00, type: 3}
       propertyPath: playerLives

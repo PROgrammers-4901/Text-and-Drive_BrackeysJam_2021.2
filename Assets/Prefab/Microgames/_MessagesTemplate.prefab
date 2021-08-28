@@ -646,7 +646,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputField: {fileID: 8929412861145061114}
-  text: Text Text Text, this is a text that I will send now
+  textPool:
+  - Hey sorry, I'm running late! I'll be there in a little bit!
+  - What's up man! How's it going? I'm suuuuper bored lol
+  - Man, traffic is bad today. Wonder what's going on? Hmm... Thinking emoji
   stepByWords: 1
 --- !u!1 &2151128119833447074
 GameObject:
