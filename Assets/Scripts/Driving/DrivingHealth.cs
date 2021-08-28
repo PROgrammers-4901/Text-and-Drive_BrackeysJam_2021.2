@@ -22,7 +22,7 @@ public class DrivingHealth : MonoBehaviour
             {
                 StartCoroutine(AudioManager.FadeAudioSource.StartFade(medium, hard, 1, 1));
             }
-
+            */
 
             if (playerHealth <= 0)
             {
