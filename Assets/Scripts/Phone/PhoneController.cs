@@ -45,7 +45,7 @@ namespace Phone
         void SpawnNotification(MicrogameScriptableObject microgame)
         {
             // TODO: Spawn Sound
-            SoundManager.Instance.PlaySound(microgame.NotificationSounds[Random.Range(0, microgame.NotificationSounds.Count)]);
+            SoundManager.Instance.PlaySound(microgame.NotificationSounds[Random.Range(0, microgame.NotificationSounds.Count)].name);
 
             if (!phoneScreenContainer.activeSelf)
                 phoneScreenContainer.SetActive(true);

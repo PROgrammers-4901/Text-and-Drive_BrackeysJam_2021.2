@@ -40,7 +40,7 @@ public class playerController : MonoBehaviour
     {
         if (Input.GetButtonDown("Brake") && !braking && brakingAllowed)
         {
-            brakeSound = SoundManager.Instance.PlaySound(brakingSound);
+            brakeSound = SoundManager.Instance.PlaySound("Car Brake");
             brakeSound.volume = 1f;
             
             fadeOut = false;

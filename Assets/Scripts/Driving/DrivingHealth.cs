@@ -15,12 +15,12 @@ public class DrivingHealth : MonoBehaviour
             
             if(playerHealth <= 0)
             {
-                SoundManager.Instance.PlaySound(GameOver, 1.3f);
+                SoundManager.Instance.PlaySound("GameOverCrash", 1.3f);
                 GameManager.Instance.GameOver();
                 return;
             }
             
-            SoundManager.Instance.PlaySound(CarImpact);
+            SoundManager.Instance.PlaySound("CarCrash");
         }
     }
 }
