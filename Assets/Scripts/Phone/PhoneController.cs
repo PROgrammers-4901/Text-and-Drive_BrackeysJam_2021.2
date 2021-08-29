@@ -39,7 +39,7 @@ namespace Phone
                 _idleTime = Mathf.Clamp(_idleTime - Time.deltaTime, 0, float.MaxValue);
             
             if(_notificationInstances.Count > 15 && _idleTime > 60f)
-                GameManager.Instance.PauseGame();
+                GameManager.Instance.GameOver();
         }
 
         void SpawnNotification(MicrogameScriptableObject microgame)

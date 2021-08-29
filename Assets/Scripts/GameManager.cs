@@ -31,6 +31,8 @@ public class GameManager : Singleton<GameManager>
     private bool paused;
     private int scenesLoaded = 0;
 
+    public float gameScore;
+
     private void Awake()
     {
         this.Reload();
@@ -54,6 +56,8 @@ public class GameManager : Singleton<GameManager>
         { 
             GameTime += Time.deltaTime;
         }
+        
+        
     }
 
     private void LoadScenes()

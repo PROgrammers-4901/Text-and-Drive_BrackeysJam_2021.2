@@ -1,9 +1,11 @@
+using System;
 using UnityEngine;
 using UnityEngine.Audio;
 
 public class DrivingHealth : MonoBehaviour
 {
     [SerializeField] private int playerHealth;
+    
     [Header("Sounds")]
     [SerializeField] private AudioMixer audioMixer;
     
@@ -11,13 +13,24 @@ public class DrivingHealth : MonoBehaviour
     [SerializeField] private GameObject damage1;
     [SerializeField] private GameObject damage2;
 
-    
-    
+    [Header("Animator")]
+    [SerializeField] private Animator carAnimator;
+    private Animator phoneAnimator;
+    [SerializeField] private GameObject airBag;
+
+    private void Start()
+    {
+        phoneAnimator = GameObject.Find("PhoneContainer").GetComponent<Animator>();
+    }
+
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("KillObject"))
         {
             playerHealth--;
+            
+            carAnimator.Play("CarDamage");
+            phoneAnimator?.Play("CarDamagePhone");
             
             if (playerHealth == 2)
             {
@@ -39,6 +52,7 @@ public class DrivingHealth : MonoBehaviour
                 GameManager.Instance.GameOver();
                 audioMixer.SetFloat("hardVolume", -80f);
                 audioMixer.SetFloat("easyVolume", 0f);
+                airBag.SetActive(true);
                 return;
             }
             
