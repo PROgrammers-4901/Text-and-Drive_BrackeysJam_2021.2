@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class DrivingHealth : MonoBehaviour
 {
@@ -6,28 +7,38 @@ public class DrivingHealth : MonoBehaviour
     [Header("Sounds")]
     [SerializeField] private AudioClip CarImpact;
     [SerializeField] private AudioClip GameOver;
+    [SerializeField] private AudioMixer audioMixer;
     
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("KillObject"))
         {
             playerHealth--;
-            //StartCoroutine(FadeAudioSource.StartFade(AudioSource audioSource, float duration, float targetVolume));
-            /*
+            
             if (playerHealth == 2)
             {
-                StartCoroutine(AudioManager.FadeAudioSource.StartFade(easy, medium, 1, .75));
+                audioMixer.SetFloat("easyVolume", -80f);
+                audioMixer.SetFloat("mediumVolume", -10f);
+                //easyVolume = -80f;
+                //mediumVolume = -10f;
             }
             else if (playerHealth == 1)
             {
-                StartCoroutine(AudioManager.FadeAudioSource.StartFade(medium, hard, 1, 1));
+                audioMixer.SetFloat("mediumVolume", -80f);
+                audioMixer.SetFloat("hardVolume", 0f);
+                //mediumVolume = -80f;
+                //hardVolume = 0f;
             }
-            */
+            
 
             if (playerHealth <= 0)
             {
                 SoundManager.Instance.PlaySound("GameOverCrash", 1.3f);
                 GameManager.Instance.GameOver();
+                audioMixer.SetFloat("hardVolume", -80f);
+                audioMixer.SetFloat("easyVolume", 0f);
+                //hardVolume = -80f;
+                //easyVolume = 0f;
                 return;
             }
             
