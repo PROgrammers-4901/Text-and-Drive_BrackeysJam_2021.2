@@ -650,6 +650,34 @@ MonoBehaviour:
   - Hey sorry, I'm running late! I'll be there in a little bit!
   - What's up man! How's it going? I'm suuuuper bored lol
   - Man, traffic is bad today. Wonder what's going on? Hmm... Thinking emoji
+  - Just saw someone texting and driving, what a dumb thing to do...
+  - I actually thought of this game idea while texting and driving lol
+  - Forward this message to 10 friends or you will get hair cancer!
+  - My hot wife brought me a sandwich while playing League of Legends
+  - GO! SONICHU! GO OUT AND ZAP TO THE EXTREME! "THANK YOU, FATHER!"
+  - Oak's words echoed..."There's a time and place for everything! But not now."
+  - It is a beautiful day outside. Birds are singning, flowers are blooming....
+  - Just because you did something bad, doesn't make you a bad person.
+  - Home is your birthplace, your origin, its the place one returns to.
+  - Let each man take his lot and place OAS AAS LLS :)
+  - 'Yo this music is kinda bussin 0_0 ;) B) :O :3 xD '
+  - OwO UwU xD
+  - 'Number 15: Burger king foot lettuce. The last thing you''d want in'
+  - Doin' your mom! Doin' Doin' your mom!
+  - 'AMONG US '
+  - The sink drain can have a little oil, as a treat :)
+  - Number One Victory Royale; Yeah, Fortnite, we 'bout to get down(get down)
+  - A B C D B G A ;P ;P ;P ;P ;P
+  - I have never seen a thin person drinking Diet Coke . .
+  - It seems today that all you see Is violence in movies ke . .
+  - Why would anyone do drugs when they could just mow the lawn...
+  - "The FitnessGram\u2122 Pacer Test is a multistage aerobic capacity test that
+    progressively"
+  - I wear a mask with a smile for hours at a time
+  - Meow? (Waiting for something to happen?)
+  - Hey, did I say something bad? We should try another date soon.
+  - Can you send me $5K? I need to buy a new car.
+  - Thought I'd try shooting my way out. Mix things up a little.
   stepByWords: 1
 --- !u!1 &2151128119833447074
 GameObject:
@@ -1239,7 +1267,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &5536876524490090268
 MonoBehaviour:
   m_ObjectHideFlags: 0
