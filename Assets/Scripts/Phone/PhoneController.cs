@@ -27,7 +27,7 @@ namespace Phone
 
         private void Update()
         {
-            if (firstMicrogame)
+            if (firstMicrogame && GameManager.Instance.GameStarted)
             {
                 Invoke(nameof(FetchMicrogame), GameManager.Instance.GetMicrogameInterval());
                 firstMicrogame = false;

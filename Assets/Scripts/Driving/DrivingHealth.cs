@@ -7,6 +7,12 @@ public class DrivingHealth : MonoBehaviour
     [Header("Sounds")]
     [SerializeField] private AudioMixer audioMixer;
     
+    [Header("ScreenDamage")] 
+    [SerializeField] private GameObject damage1;
+    [SerializeField] private GameObject damage2;
+
+    
+    
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("KillObject"))
@@ -15,17 +21,15 @@ public class DrivingHealth : MonoBehaviour
             
             if (playerHealth == 2)
             {
+                damage1.SetActive(true);
                 audioMixer.SetFloat("easyVolume", -80f);
                 audioMixer.SetFloat("mediumVolume", -10f);
-                //easyVolume = -80f;
-                //mediumVolume = -10f;
             }
             else if (playerHealth == 1)
             {
+                damage2.SetActive(true);
                 audioMixer.SetFloat("mediumVolume", -80f);
                 audioMixer.SetFloat("hardVolume", 0f);
-                //mediumVolume = -80f;
-                //hardVolume = 0f;
             }
             
 
@@ -35,8 +39,6 @@ public class DrivingHealth : MonoBehaviour
                 GameManager.Instance.GameOver();
                 audioMixer.SetFloat("hardVolume", -80f);
                 audioMixer.SetFloat("easyVolume", 0f);
-                //hardVolume = -80f;
-                //easyVolume = 0f;
                 return;
             }
             

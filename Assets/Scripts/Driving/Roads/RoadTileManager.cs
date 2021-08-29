@@ -41,6 +41,9 @@ namespace Driving.Roads
 
         void SpawnTile(int prefabIndex = 0)
         {
+            if (!GameManager.Instance.GameStarted)
+                prefabIndex = 0;
+                
             GameObject go;
             go = Instantiate(tilePrefabs[prefabIndex]);
         

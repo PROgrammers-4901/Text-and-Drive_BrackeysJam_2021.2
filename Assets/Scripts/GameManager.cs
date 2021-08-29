@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microgames;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
@@ -15,6 +16,8 @@ public class GameManager : Singleton<GameManager>
     private GameModes currentGameMode;
 
     [SerializeField] private float difficultyScaler = 30f;
+    [SerializeField] private AudioMixer audioMixer;
+    
     
     
     public float GameTime { get; private set; }
@@ -23,6 +26,7 @@ public class GameManager : Singleton<GameManager>
     public float PhoneScore { get; set; }
     public GameObject PlayerObject { get; set; }
     public float PlayerSpeed { get; private set; }
+    public bool GameStarted { get; private set; }
     
     private bool paused;
     private int scenesLoaded = 0;
@@ -35,21 +39,24 @@ public class GameManager : Singleton<GameManager>
 
         SceneManager.sceneLoaded += OnSceneLoaded;
         
-        StartGame();
+        LoadScenes();
     }
 
     private void Update()
     {
+        if(Input.GetButtonDown("Jump"))
+            StartGame();
+        
         if (PlayerObject == null)
             PlayerObject = GameObject.FindWithTag("Player");
         
-        if (!paused)
+        if (!paused && GameStarted)
         { 
             GameTime += Time.deltaTime;
         }
     }
 
-    public void StartGame()
+    private void LoadScenes()
     {
         Time.timeScale = 1;
         
@@ -58,6 +65,12 @@ public class GameManager : Singleton<GameManager>
             SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
             SceneManager.LoadSceneAsync(2, LoadSceneMode.Additive);
         }
+    }
+
+    public void StartGame()
+    {
+        GameStarted = true;
+        audioMixer.SetFloat("easyVolume", 0f);
     }
 
     public GameObject FindCommonGameObjectByName(string name) =>

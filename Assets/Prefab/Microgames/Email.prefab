@@ -1813,7 +1813,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &2632779147118014367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2814,6 +2814,7 @@ MonoBehaviour:
   textPool:
   - Brackeys Game Jam
   - Terrible Pasta Place
+  - Game Developer Meetup
   stepByWords: 1
 --- !u!1 &4486996193539640442
 GameObject:
