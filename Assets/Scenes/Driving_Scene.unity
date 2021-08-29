@@ -684,7 +684,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   steeringWheel: {fileID: 1178320030}
   brakingSound: {fileID: 8300000, guid: ea25345073d0ae946a97ec371410b56d, type: 3}
-  moveSpeed: 0
+  moveSpeed: 1
   strafeSpeed: 1
   brakeCooldownInSeconds: 5
   acceleration: 0.01

@@ -528,7 +528,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e5c6e995c61f024f8119fcf27a7cb9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  commonGameObjects: []
+  commonGameObjects:
+  - {fileID: 1143108570}
   currentGameMode: {fileID: 11400000, guid: 80da15a3a68b17049806408365d1f0f0, type: 2}
   difficultyScaler: 30
 --- !u!1 &216510717

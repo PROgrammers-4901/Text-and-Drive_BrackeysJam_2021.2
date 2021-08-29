@@ -31,7 +31,7 @@ public class Car : MonoBehaviour
         if(!_player)
             _player = GameManager.Instance.PlayerObject;    
             
-        Vector3 dir = transform.position - _player.transform.position;
+        Vector3 dir = (transform.position - _player.transform.position).normalized;
         dir = _player.transform.InverseTransformDirection(dir);
         float angle = Mathf.Abs(Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg);
         

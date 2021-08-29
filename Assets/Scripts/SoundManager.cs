@@ -7,6 +7,11 @@ public class SoundManager : Singleton<SoundManager>
 {
     [SerializeField] private List<AudioClip> sounds = new List<AudioClip>();
 
+    private void Awake()
+    {
+        this.Reload();
+    }
+
     public AudioSource PlaySound(string clip, float volume = 1f)
     {
         GameObject soundObject = new GameObject("Sound");

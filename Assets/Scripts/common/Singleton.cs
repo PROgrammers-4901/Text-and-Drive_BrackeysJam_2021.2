@@ -35,6 +35,9 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
                     // Create new instance if one doesn't already exist.
                     if (m_Instance == null)
                     {
+                        Debug.Log("Instance is Null!");
+                        
+                        
                         // Need to create a new GameObject to attach the singleton to.
                         var singletonObject = new GameObject();
                         m_Instance = singletonObject.AddComponent<T>();
@@ -48,6 +51,11 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
                 return m_Instance;
             }
         }
+    }
+
+    public void Reload()
+    {
+        m_ShuttingDown = false;
     }
  
  
