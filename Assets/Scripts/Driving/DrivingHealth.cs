@@ -12,8 +12,19 @@ public class DrivingHealth : MonoBehaviour
         if (other.gameObject.CompareTag("KillObject"))
         {
             playerHealth--;
-            
-            if(playerHealth <= 0)
+            //StartCoroutine(FadeAudioSource.StartFade(AudioSource audioSource, float duration, float targetVolume));
+            /*
+            if (playerHealth == 2)
+            {
+                StartCoroutine(AudioManager.FadeAudioSource.StartFade(easy, medium, 1, .75));
+            }
+            else if (playerHealth == 1)
+            {
+                StartCoroutine(AudioManager.FadeAudioSource.StartFade(medium, hard, 1, 1));
+            }
+            */
+
+            if (playerHealth <= 0)
             {
                 SoundManager.Instance.PlaySound("GameOverCrash", 1.3f);
                 GameManager.Instance.GameOver();
