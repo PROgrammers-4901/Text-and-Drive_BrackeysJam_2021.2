@@ -191,6 +191,26 @@ MonoBehaviour:
   inputField: {fileID: 4789312554468737203}
   textPool:
   - Dear Devs, WOW this game is really really funny. Good job! Kudos!
+  - 'If you could change your fate, would ya? I sure would (: (:'
+  - I would be your daddy, but a dog beat me over the fence.
+  - Hello, I have been trying to reach you about your cars extended warranty
+  - We're no strangers to love. You know the rules, and so do I
+  - 'Flag Stolen! Flag Dropped. Flag Stolen! Flag Dropped. Flag Stolen ! Flag Captured. '
+  - beep boop boop bop
+  - l'll have you know I graduated top in my class in the Seals.
+  - Ogres are like onions. Ogres have layers. Onions have layers. Get it?
+  - Give eat orange me eat orange give me eat orange give me you.
+  - I am having trouble coming up with thirteen word quotes. My eyes hurt.
+  - Does my car insurance cover damage if I leave the scene? Just curious
+  - Why would you send me to the middle of the desert to drive?
+  - If I have to drive any longer, I'm going to lose my mind.
+  - What if I can't make it on time? I'm speeding to get there.
+  - Hello! I need a new job immediately. I sent you my resume yesterday.
+  - Maybe we should have entered the Yaoi Game Jam instead... Or maybe not.
+  - Happy Birthday!!! It's probably someones birthday, right? If it is, comment it
+    below.
+  - How can mirrors be real if our eyes aren't real - Willow Smith
+  - Rats... We're rats... We're the rats... We pray at night, stalk at night...
   stepByWords: 1
 --- !u!1 &193262732671037433
 GameObject:
@@ -2175,6 +2195,15 @@ MonoBehaviour:
   - TheBoss@wahoo.com
   - NotAScam@scamo.com
   - AliasFakeName@pseudo.com
+  - m@iscool.com
+  - registrar@unt.edu
+  - noreply@google.com
+  - nigerianprince@aol.com
+  - chrischan@yahoo.com
+  - qwertyuiopasdfghjklzxcvbnm@gmail.com
+  - mattnbandit@gmail.com
+  - imhungryandwanttacos@imessage.net
+  - cdavis@aubreyisd.net
   stepByWords: 1
 --- !u!1 &3456193368319101143
 GameObject:
@@ -2813,6 +2842,15 @@ MonoBehaviour:
   inputField: {fileID: 6107468211844945143}
   textPool:
   - Brackeys Game Jam
+  - Flat Earth Society
+  - You re Mom
+  - President Joe Biden
+  - Texting and Driving
+  - Moms Against Ketchup
+  - Phi Mu Alpha
+  - Come and Slam
+  - Longest Monkey Sentence
+  - Favorite Song Lyrics
   - Terrible Pasta Place
   - Game Developer Meetup
   stepByWords: 1
