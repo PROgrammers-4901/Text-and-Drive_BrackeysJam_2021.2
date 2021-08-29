@@ -1617,13 +1617,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbcd89b5fd944ed448f98fd0dc5e5c30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilesToSpawn: 7
+  tilesToSpawn: 10
   tileLength: 100
   tilePrefabs:
   - {fileID: 7185169777070087518, guid: edd0c26c71160ba4ebff7bf4d3c22987, type: 3}
   - {fileID: 3280765753219545776, guid: 8a6a93bb3272b6540a21bbe51ed2f979, type: 3}
   - {fileID: 4393729708674043556, guid: 13e4997552e4ac04d8530caae82e89a6, type: 3}
   - {fileID: 288862769221445507, guid: 380e2095696b9fd41929e20e6237eaf4, type: 3}
+  - {fileID: 4224138243812906046, guid: 5dfe21224d6f847429df4b2a83d890de, type: 3}
+  - {fileID: 7370195109960077251, guid: 126efebde4d8ef440aab0d87f69d9276, type: 3}
   safeZone: 50
 --- !u!4 &1893085586
 Transform:

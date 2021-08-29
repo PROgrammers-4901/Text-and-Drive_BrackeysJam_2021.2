@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PhoneCall
   m_EditorClassIdentifier: 
   appName: Phone
-  notificationText: <NAME> Is Calling!
+  notificationText: Someone Is Calling!
   appLogo: {fileID: 6549936278352523220, guid: 8f1f0fe292e5bb6458b7be800ee42bf2, type: 3}
   microgame: {fileID: 7767679850162554254, guid: 858b035f4d7150545af592daec1af81c, type: 3}
   NotificationSounds:

@@ -11,6 +11,8 @@ namespace Phone
         [SerializeField] private GameObject phoneScreenContainer;
         [SerializeField] private GameObject notificationContainer;
         [SerializeField] private GameObject notificationPrefab;
+        [SerializeField] private GameObject phoneBuzz;
+        
         [SerializeField] private int playerLives = 4;
 
         private List<GameObject> _notificationInstances = new List<GameObject>();
@@ -44,8 +46,8 @@ namespace Phone
 
         void SpawnNotification(MicrogameScriptableObject microgame)
         {
-            // TODO: Spawn Sound
             SoundManager.Instance.PlaySound(microgame.NotificationSounds[Random.Range(0, microgame.NotificationSounds.Count)].name);
+            phoneBuzz.SetActive(true);
 
             if (!phoneScreenContainer.activeSelf)
                 phoneScreenContainer.SetActive(true);

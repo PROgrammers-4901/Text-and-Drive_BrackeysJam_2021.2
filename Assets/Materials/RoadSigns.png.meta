@@ -14,6 +14,27 @@ TextureImporter:
   - first:
       213: 3858711674188186252
     second: RoadSigns_3
+  - first:
+      213: -5239498829597811777
+    second: RoadSigns_4
+  - first:
+      213: 502511602228076047
+    second: RoadSigns_5
+  - first:
+      213: 8237266345460157328
+    second: RoadSigns_6
+  - first:
+      213: 4257562306883447429
+    second: RoadSigns_7
+  - first:
+      213: -7298831031302349393
+    second: RoadSigns_8
+  - first:
+      213: -3309340260760855648
+    second: RoadSigns_9
+  - first:
+      213: 4563155838133976703
+    second: RoadSigns_10
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -160,10 +181,10 @@ TextureImporter:
       name: RoadSigns_2
       rect:
         serializedVersion: 2
-        x: 205
-        y: 1462
-        width: 201
-        height: 226
+        x: 763
+        y: 1262
+        width: 258
+        height: 518
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,6 +202,153 @@ TextureImporter:
       name: RoadSigns_3
       rect:
         serializedVersion: 2
+        x: 1118
+        y: 1721
+        width: 384
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c82c3a6c2d5ec8530800000000000000
+      internalID: 3858711674188186252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoadSigns_4
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 1462
+        width: 201
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbb5fb4139f8947b0800000000000000
+      internalID: -5239498829597811777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoadSigns_5
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 1490
+        width: 273
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0e115ac3a749f600800000000000000
+      internalID: 502511602228076047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoadSigns_6
+      rect:
+        serializedVersion: 2
+        x: 1430
+        y: 1524
+        width: 152
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09bce692916a05270800000000000000
+      internalID: 8237266345460157328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoadSigns_7
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 1013
+        width: 332
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58a61ee4c56e51b30800000000000000
+      internalID: 4257562306883447429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoadSigns_8
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 1007
+        width: 164
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fad10af09d755ba90800000000000000
+      internalID: -7298831031302349393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoadSigns_9
+      rect:
+        serializedVersion: 2
+        x: 973
+        y: 1098
+        width: 545
+        height: 293
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ab5374019cd212d0800000000000000
+      internalID: -3309340260760855648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoadSigns_10
+      rect:
+        serializedVersion: 2
         x: 99
         y: 272
         width: 1471
@@ -192,8 +360,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c82c3a6c2d5ec8530800000000000000
-      internalID: 3858711674188186252
+      spriteID: f7eb9b2ee06935f30800000000000000
+      internalID: 4563155838133976703
       vertices: []
       indices: 
       edges: []
