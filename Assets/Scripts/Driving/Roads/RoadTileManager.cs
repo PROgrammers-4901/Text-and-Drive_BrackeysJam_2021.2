@@ -29,6 +29,9 @@ namespace Driving.Roads
         // Update is called once per frame
         void Update()
         {
+            if(_playerTransform == null)
+                _playerTransform = GameManager.Instance.PlayerObject.transform;
+            
             if (_playerTransform.position.z - safeZone > (lastSpawnZ - tilesToSpawn * tileLength))
             {
                 SpawnTile(Random.Range(0, tilePrefabs.Count));

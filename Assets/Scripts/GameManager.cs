@@ -25,17 +25,24 @@ public class GameManager : Singleton<GameManager>
     public float PlayerSpeed { get; private set; }
     
     private bool paused;
+    private int scenesLoaded = 0;
 
     private void Awake()
     {
+        this.Reload();
         PlayerSpeed = currentGameMode.playerStartSpeed;
         Difficulty = currentGameMode.initialDifficulty;
 
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        
         StartGame();
     }
 
     private void Update()
     {
+        if (PlayerObject == null)
+            PlayerObject = GameObject.FindWithTag("Player");
+        
         if (!paused)
         { 
             GameTime += Time.deltaTime;
@@ -44,6 +51,8 @@ public class GameManager : Singleton<GameManager>
 
     public void StartGame()
     {
+        Time.timeScale = 1;
+        
         if(SceneManager.sceneCount < 3)
         {
             SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
@@ -78,9 +87,7 @@ public class GameManager : Singleton<GameManager>
     {
         PauseGame();
         
-        Debug.Log("GAME OVER");
-        
-        //TODO: Render GameOver Screen
+        commonGameObjects.Find((go => go.name == "GameOverScreen")).SetActive(true);
     }
     
     public float GetMicrogameInterval() =>
@@ -88,4 +95,17 @@ public class GameManager : Singleton<GameManager>
     
     public float GetScaledDifficulty() => (float) Difficulty + GameTime / difficultyScaler;
     public float GetScaledSpeed() => PlayerSpeed + GetScaledDifficulty() / 5;
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode sceneMode)
+    {
+        if(scene.buildIndex == 1 || scene.buildIndex == 2)
+            scenesLoaded++;
+
+        if (scenesLoaded >= 2 && SceneManager.GetSceneByBuildIndex(3).isLoaded)
+        {
+            SceneManager.UnloadSceneAsync(3);
+            scenesLoaded = 0;
+        }
+            
+    }
 }
