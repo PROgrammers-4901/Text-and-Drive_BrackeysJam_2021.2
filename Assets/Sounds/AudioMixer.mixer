@@ -14,6 +14,22 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!244 &-8060820994375579307
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: c2489da88bba8e64999914eedaeabe4d
+  m_EffectName: Highpass Simple
+  m_MixLevel: cb07d67424ce2ee4b97273eff4578c4e
+  m_Parameters:
+  - m_ParameterName: Cutoff freq
+    m_GUID: f363b6891c829aa4aa3b614726a32091
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!243 &-7978921085123894675
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -81,7 +97,13 @@ AudioMixerController:
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
   m_UpdateMode: 0
-  m_ExposedParameters: []
+  m_ExposedParameters:
+  - guid: a26f1199537985043b800c0fca1b00f1
+    name: easyVolume
+  - guid: 2527dc71b9a9bb24f92ca830527369a5
+    name: hardVolume
+  - guid: c03dd075cd7ab3d4c8b08fe6cab5384e
+    name: mediumVolume
   m_AudioMixerGroupViews:
   - guids:
     - 353e4705806a4ca419bb60a151aadbc9
@@ -142,7 +164,11 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: d91ba819ab2de5c4f930ebad743ddede
   m_FloatValues:
+    2527dc71b9a9bb24f92ca830527369a5: -80
     8e18d443a6111f64ea115607ae400cbd: -0.19117308
+    c03dd075cd7ab3d4c8b08fe6cab5384e: -80
+    ec944d063770e434a8b08f24784c3343: -10.345207
+    f363b6891c829aa4aa3b614726a32091: 2000
     e349bb4a54d92104dbcf0f6e08024659: -0.19117308
     0c46ab2ec18978c40b8928c1280d0a70: -0.30163807
   m_TransitionOverrides: {}
@@ -194,6 +220,7 @@ AudioMixerGroupController:
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 8423056497187504915}
+  - {fileID: -8060820994375579307}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0

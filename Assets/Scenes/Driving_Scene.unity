@@ -720,8 +720,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: 3
-  CarImpact: {fileID: 8300000, guid: b55e2648a922cf1488e6898c20cae9c9, type: 3}
-  GameOver: {fileID: 8300000, guid: 62b0175ad69c42643a7fb66f67f5b648, type: 3}
+  audioMixer: {fileID: 24100000, guid: e82a86b6016f70843b7f533441271e33, type: 2}
 --- !u!82 &828298016
 AudioSource:
   m_ObjectHideFlags: 0
@@ -731,7 +730,7 @@ AudioSource:
   m_GameObject: {fileID: 828298010}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -1168604442697674328, guid: e82a86b6016f70843b7f533441271e33, type: 2}
+  OutputAudioMixerGroup: {fileID: 925625042098958854, guid: e82a86b6016f70843b7f533441271e33, type: 2}
   m_audioClip: {fileID: 8300000, guid: 88d1e341e4a80434fac680e24ad5af2b, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.75

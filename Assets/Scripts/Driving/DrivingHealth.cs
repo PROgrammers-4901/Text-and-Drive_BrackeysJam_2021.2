@@ -5,8 +5,6 @@ public class DrivingHealth : MonoBehaviour
 {
     [SerializeField] private int playerHealth;
     [Header("Sounds")]
-    [SerializeField] private AudioClip CarImpact;
-    [SerializeField] private AudioClip GameOver;
     [SerializeField] private AudioMixer audioMixer;
     
     private void OnCollisionEnter(Collision other)
