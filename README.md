@@ -11,7 +11,9 @@
 ## Controls
 
 **[Click & Drag Phone]** to pull up phone
+
 **[Click Notifications]** to open app
+
 **[Click & Drag Steering Wheel]** to steer
 
 ## Credits
