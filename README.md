@@ -16,6 +16,9 @@
 
 **[Click & Drag Steering Wheel]** to steer
 
+## Ranking
+![image](https://user-images.githubusercontent.com/14116906/132953863-c0192698-5ac9-4741-875d-f4ee8d8f6d9c.png)
+
 ## Credits
 Steven Hurley - Programming, Design
 
